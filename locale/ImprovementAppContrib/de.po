@@ -1,0 +1,157 @@
+# German translation for the Improvement-Application
+# Translators: Modell Aachen
+msgid ""
+msgstr ""
+"Project-Id-Version: Foswiki $Id\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2012-11-26 00:09+0200\n"
+"Last-Translator: Bartek \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.1.6\n"
+
+msgid "Create new q-notification"
+msgstr "Neue Q-Meldung erstellen"
+
+msgid "All q-notifications"
+msgstr "Alle Q-Meldungen"
+
+msgid "New"
+msgstr "Neu"
+
+msgid To be approved"
+msgstr "In Prüfung"
+
+msgid "Approved"
+msgstr "Genehmigt"
+
+msgid "Effectiveness checkup"
+msgstr "Wirksamkeitsprüfung"
+
+msgid "Implemented"
+msgstr "Umgesetzt"
+
+msgid "Discarded"
+msgstr "Verworfen"
+
+msgid "Customer feedback"
+msgstr "Kundenreaktion"
+
+msgid "Suggestion for improvement"
+msgstr "Verbesserungsvorschlag"
+
+msgid "Internal error"
+msgstr "Interner Fehler"
+
+msgid "Idea"
+msgstr "Idee"
+
+msgid "Audit"
+msgstr "Audit"
+
+msgid "Praise and recommendation"
+msgstr "Lob und Empfehlung"
+
+msgid "Quality improvement"
+msgstr "Qualitätsverbesserung"
+
+msgid "Delivery error"
+msgstr "Lieferantenfehler"
+
+msgid "Other reasons"
+msgstr "Andere Gründe"
+
+msgid "Creator"
+msgstr "Ersteller"
+
+msgid "Release"
+msgstr "Auslöser"
+
+msgid "Customer"
+msgstr "Kunde"
+
+msgid "Product"
+msgstr "Produkt"
+
+msgid "Event"
+msgstr "Ereignis"
+
+msgid "Approach"
+msgstr "Lösungsansatz"
+
+msgid "Assessment"
+msgstr "Bewertung"
+
+msgid "Responsible"
+msgstr "Verantwortlich"
+
+msgid "Decision"
+msgstr "Entscheid"
+
+msgid "Description"
+msgstr "Beschreibung
+
+msgid "Q-Notification"
+msgstr "Q-Meldung"
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "Cause"
+msgstr "Auslöser"
+
+msgid "To be filled out by QM"
+msgstr "Auszufüllen durch QM"
+
+msgid "To be filled out by Responsible"
+msgstr "Auszufüllen durch Verantwortlichen"
+
+msgid "Q-Notification workflow"
+msgstr "Q-Meldung Workflow"
+
+msgid "This q-notification is not under any workflow."
+msgstr "Diese Q-Meldung unterliegt keinem Workflow."
+
+msgid "This q-notification is a draft."
+msgstr "Diese Q-Meldung ist ein Entwurf."
+
+msgid "This q-notification is waiting for approval by QM."
+msgstr "Diese Q-Meldung wartet auf eine Freigabe durch die QM."
+
+msgid "This q-notification has been approved by QM."
+msgstr "Diese Q-Meldung ist durch die QM freigegeben worden."
+
+msgid "This q-notification is being checked up for effectiveness."
+msgstr "Diese Q-Meldung befindet sich in der Wirksamkeitsprüfung."
+
+msgid "This q-notification has been implemented successfully."
+msgstr "Diese Q-Meldung wurde erfolgreich umgesetzt."
+
+msgid "This q-notification has been discarded."
+msgstr "Diese Q-Meldung wurde verworfen."
+
+msgid "Create"
+msgstr "Erstellen"
+
+msgid "Request approval"
+msgstr "Um Freigabe bitten"
+
+msgid "Discard"
+msgstr "Verwerfen"
+
+msgid "Approve this q-notification for further process"
+msgstr "Q-Meldung zur Bearbeitung freigeben"
+
+msgid "Transfer to effectiveness checkup"
+msgstr "In Wirksamkeitsprüfung überführen"
+
+msgid "Finish implementing"
+sgstr "Umsetzung abschließen"
+
+msgid "Retransfer this q-notification to draft status"
+msgstr "Q-Meldung erneut in Entwurfsstatus stellen"

@@ -1,0 +1,7 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1397136035" format="1.1" reprev="5" version="6"}%
+
+
+%META:PREFERENCE{name="WORKFLOW" title="WORKFLOW" type="Local" value=""}%
+%META:PREFERENCE{name="NOWYSIWYG" title="NOWYSIWYG" type="Local" value="1"}%
+%META:PREFERENCE{name="ALLOWTOPICCHANGE" title="ALLOWTOPICCHANGE" type="Local" value="AdminUser"}%
+%META:PREFERENCE{name="VIEW_TEMPLATE" title="VIEW_TEMPLATE" type="Set" value="WebHomeView"}%

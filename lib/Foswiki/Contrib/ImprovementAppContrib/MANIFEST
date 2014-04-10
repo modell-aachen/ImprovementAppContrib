@@ -1,0 +1,25 @@
+data/Sandbox/Improvements/CustomSkinTransitionsTemplate.txt 0644
+data/Sandbox/Improvements/QNotificationEditTemplate.txt 0644
+data/Sandbox/Improvements/QNotificationForm.txt 0644
+data/Sandbox/Improvements/QNotificationTemplate.txt 0644
+data/Sandbox/Improvements/QNotificationViewTemplate.txt 0644
+data/Sandbox/Improvements/QNotificationWorkflow.txt 0644
+data/Sandbox/Improvements/WebActions.txt 0644
+data/Sandbox/Improvements/WebAtom.txt 0644
+data/Sandbox/Improvements/WebChanges.txt 0644
+data/Sandbox/Improvements/WebContentTemplates.txt 0644
+data/Sandbox/Improvements/WebCreateNewTopic.txt 0644
+data/Sandbox/Improvements/WebHome.txt 0644
+data/Sandbox/Improvements/WebHomeViewTemplate.txt 0644
+data/Sandbox/Improvements/WebIndex.txt 0644
+data/Sandbox/Improvements/WebNotify.txt 0644
+data/Sandbox/Improvements/WebPreferences.txt 0644
+data/Sandbox/Improvements/WebRss.txt 0644
+data/Sandbox/Improvements/WebSearchAdvanced.txt 0644
+data/Sandbox/Improvements/WebSearch.txt 0644
+data/Sandbox/Improvements/WebStatistics.txt 0644
+data/Sandbox/Improvements/WebTopicList.txt 0644
+data/System/ImprovementAppContrib.txt 0644
+lib/Foswiki/Contrib/ImprovementAppContrib.pm 0644
+locale/ImprovementAppContrib/de.po 0644
+

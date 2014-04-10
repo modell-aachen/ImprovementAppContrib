@@ -1,0 +1,9 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1397132966" format="1.1" reprev="3" version="3"}%
+%META:TOPICPARENT{name="WebHome"}%
+%IF{
+"istopic '%USERSWEB%.Default%TOPIC%'"
+then="$percentINCLUDE{$quot%USERSWEB%.Default%TOPIC%$quot}$percent"
+else="$percentINCLUDE{$quot%SYSTEMWEB%.Default%TOPIC%$quot}$percent"
+}%
+| <!--statDate--> | <!--statViews--> | <!--statSaves--> | <!--statUploads--> | <!--statTopViews--> | <!--statTopContributors--> |
+| Apr 2014 |  68 |  17 |  0 | &nbsp;16 [[WebHome]]<br />&nbsp;11 [[QMeldung002]]<br />&nbsp;&nbsp;9 [[WebTopicList]]<br />&nbsp;&nbsp;7 [[QNotificationViewTemplate]]<br />&nbsp;&nbsp;6 [[QNotificationWorkflow]]<br />&nbsp;&nbsp;6 [[QNotificationEditTemplate]]<br />&nbsp;&nbsp;4 [[QMeldung001]]<br />&nbsp;&nbsp;3 [[QNotificationForm]]<br />&nbsp;&nbsp;2 [[QNotificationTemplate]]<br />&nbsp;&nbsp;2 [[QMeldung000]]<br />&nbsp;&nbsp;1 [[WebCreateNewTopic]] | &nbsp;17 Main.AdminUser |
