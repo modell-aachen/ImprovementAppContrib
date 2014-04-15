@@ -1,4 +1,4 @@
-# German translation for the Improvement-Application
+# French translation for the Improvement-Application
 # Translators: Modell Aachen
 msgid ""
 msgstr ""
@@ -16,142 +16,142 @@ msgstr ""
 "X-Generator: Pootle 2.1.6\n"
 
 msgid "Create new q-notification"
-msgstr "Neue Q-Meldung erstellen"
+msgstr "Créer une nouvelle q-notification"
 
-msgid "All q-notifications"
-msgstr "Alle Q-Meldungen"
+msgid "All q-notificationsi"
+msgstr "Toutes les q-notifications"
 
 msgid "New"
-msgstr "Neu"
+msgstr "nouveau"
 
 msgid "To be approved"
-msgstr "In Prüfung"
+msgstr "Pour être approuvée"
 
 msgid "Approved"
-msgstr "Genehmigt"
+msgstr "Approuvée"
 
 msgid "Effectiveness checkup"
-msgstr "Wirksamkeitsprüfung"
+msgstr "Check up efficacité"
 
 msgid "Implemented"
-msgstr "Umgesetzt"
+msgstr "implémenté"
 
 msgid "Discarded"
-msgstr "Verworfen"
+msgstr "écartée"
 
 msgid "Customer feedback"
-msgstr "Kundenreaktion"
+msgstr "Réaction Client"
 
 msgid "Suggestion for improvement"
-msgstr "Verbesserungsvorschlag"
+msgstr "suggestion"
 
 msgid "Internal error"
-msgstr "Interner Fehler"
+msgstr "Erreur interne"
 
 msgid "Idea"
-msgstr "Idee"
+msgstr "Idée"
 
 msgid "Audit"
-msgstr "Audit"
+msgstr "Audits"
 
 msgid "Praise and recommendation"
-msgstr "Lob und Empfehlung"
+msgstr "Louange et recommandation"
 
 msgid "Quality improvement"
-msgstr "Qualitätsverbesserung"
+msgstr "Amélioration de qualité"
 
 msgid "Delivery error"
-msgstr "Lieferantenfehler"
+msgstr "Erreur de fournisseur"
 
 msgid "Other reasons"
-msgstr "Andere Gründe"
+msgstr "Autres Raisons"
 
 msgid "Creator"
-msgstr "Ersteller"
+msgstr "Créateur"
 
 msgid "Release"
-msgstr "Auslöser"
+msgstr "Déclencheur"
 
 msgid "Customer"
-msgstr "Kunde"
+msgstr "Client"
 
 msgid "Product"
-msgstr "Produkt"
+msgstr "Produit"
 
 msgid "Event"
-msgstr "Ereignis"
+msgstr "èvenement"
 
 msgid "Approach"
-msgstr "Lösungsansatz"
+msgstr "approche"
 
 msgid "Assessment"
-msgstr "Bewertung"
+msgstr "évaluation"
 
 msgid "Responsible"
-msgstr "Verantwortlich"
+msgstr "Responsable"
 
 msgid "Decision"
-msgstr "Entscheid"
+msgstr "Décision"
 
 msgid "Description"
-msgstr "Beschreibung
+msgstr "Déscription"
 
 msgid "Q-Notification"
-msgstr "Q-Meldung"
+msgstr "Q-Notification"
 
 msgid "Title"
-msgstr "Titel"
+msgstr "Titre"
 
 msgid "Cause"
-msgstr "Auslöser"
+msgstr "cause"
 
 msgid "To be filled out by QM"
-msgstr "Auszufüllen durch QM"
+msgstr "à remplir par QM"
 
 msgid "To be filled out by Responsible"
-msgstr "Auszufüllen durch Verantwortlichen"
+msgstr "à remplir par le responsable"
 
 msgid "Q-Notification workflow"
-msgstr "Q-Meldung Workflow"
+msgstr "Workflow de q-notification"
 
 msgid "This q-notification is not under any workflow."
-msgstr "Diese Q-Meldung unterliegt keinem Workflow."
+msgstr "Cette q-notification n'est pas soumis à un workflow."
 
 msgid "This q-notification is a draft."
-msgstr "Diese Q-Meldung ist ein Entwurf."
+msgstr "Cette q-notification est un brouillon."
 
 msgid "This q-notification is waiting for approval by QM."
-msgstr "Diese Q-Meldung wartet auf eine Freigabe durch die QM."
+msgstr "Cette q-notification est en attente d'approbation par le QM."
 
 msgid "This q-notification has been approved by QM."
-msgstr "Diese Q-Meldung ist durch die QM freigegeben worden."
+msgstr "Cette q-notification a été publié par le QM."
 
 msgid "This q-notification is being checked up for effectiveness."
-msgstr "Diese Q-Meldung befindet sich in der Wirksamkeitsprüfung."
+msgstr "Cette q-notification est en cours de vérification de l'efficacité."
 
 msgid "This q-notification has been implemented successfully."
-msgstr "Diese Q-Meldung wurde erfolgreich umgesetzt."
+msgstr "Cette q-notification a été mis en œuvre avec succès."
 
 msgid "This q-notification has been discarded."
-msgstr "Diese Q-Meldung wurde verworfen."
+msgstr "Cette q-notification a été rejetée."
 
 msgid "Create"
-msgstr "Erstellen"
+msgstr "Créer"
 
 msgid "Request approval"
-msgstr "Um Freigabe bitten"
+msgstr "Demande de confirmation"
 
 msgid "Discard"
-msgstr "Verwerfen"
+msgstr "écarter"
 
 msgid "Approve this q-notification for further process"
-msgstr "Q-Meldung zur Bearbeitung freigeben"
+msgstr "Approuver cette q-notification pour plus de modification"
 
 msgid "Transfer to effectiveness checkup"
-msgstr "In Wirksamkeitsprüfung überführen"
+msgstr "Transferer vers les tests d'efficacité"
 
 msgid "Finish implementing"
-sgstr "Umsetzung abschließen"
+sgstr "Finir l'implementation"
 
 msgid "Retransfer this q-notification to draft status"
-msgstr "Q-Meldung erneut in Entwurfsstatus stellen"
+msgstr "Retransférer cette q-notification à l'état de projet"
