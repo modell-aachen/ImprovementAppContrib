@@ -15,95 +15,137 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.1.6\n"
 
-msgid "Create new q-notification"
-msgstr "Créer une nouvelle q-notification"
-
 msgid "All q-notificationsi"
 msgstr "Toutes les q-notifications"
-
-msgid "New"
-msgstr "nouveau"
-
-msgid "To be approved"
-msgstr "Pour être approuvée"
-
-msgid "Approved"
-msgstr "Approuvée"
-
-msgid "Effectiveness checkup"
-msgstr "Check up efficacité"
-
-msgid "Implemented"
-msgstr "implémenté"
-
-msgid "Discarded"
-msgstr "écartée"
-
-msgid "Customer feedback"
-msgstr "Réaction Client"
-
-msgid "Suggestion for improvement"
-msgstr "suggestion"
-
-msgid "Internal error"
-msgstr "Erreur interne"
-
-msgid "Idea"
-msgstr "Idée"
-
-msgid "Audit"
-msgstr "Audits"
-
-msgid "Praise and recommendation"
-msgstr "Louange et recommandation"
-
-msgid "Quality improvement"
-msgstr "Amélioration de qualité"
-
-msgid "Delivery error"
-msgstr "Erreur de fournisseur"
-
-msgid "Other reasons"
-msgstr "Autres Raisons"
-
-msgid "Creator"
-msgstr "Créateur"
-
-msgid "Release"
-msgstr "Déclencheur"
-
-msgid "Customer"
-msgstr "Client"
-
-msgid "Product"
-msgstr "Produit"
-
-msgid "Event"
-msgstr "èvenement"
 
 msgid "Approach"
 msgstr "approche"
 
+msgid "Approve this q-notification for further process"
+msgstr "Approuver cette q-notification pour plus de modification"
+
+msgid "Approved"
+msgstr "Approuvée"
+
 msgid "Assessment"
 msgstr "évaluation"
 
-msgid "Responsible"
-msgstr "Responsable"
+msgid "Audit"
+msgstr "Audits"
+
+msgid "Cause"
+msgstr "cause"
+
+msgid "Create"
+msgstr "Créer"
+
+msgid "Create new q-notification"
+msgstr "Créer une nouvelle q-notification"
+
+msgid "Creator"
+msgstr "Créateur"
+
+msgid "Customer"
+msgstr "Client"
+
+msgid "Customer feedback"
+msgstr "Réaction Client"
 
 msgid "Decision"
 msgstr "Décision"
 
+msgid "Delivery error"
+msgstr "Erreur de fournisseur"
+
 msgid "Description"
 msgstr "Déscription"
+
+msgid "Discard"
+msgstr "écarter"
+
+msgid "Discarded"
+msgstr "écartée"
+
+msgid "Effectiveness checkup"
+msgstr "Check up efficacité"
+
+msgid "Event"
+msgstr "èvenement"
+
+msgid "Finish implementing"
+msgstr "Finir l'implementation"
+
+msgid "Idea"
+msgstr "Idée"
+
+msgid "Implemented"
+msgstr "implémenté"
+
+msgid "Internal error"
+msgstr "Erreur interne"
+
+msgid "New"
+msgstr "nouveau"
+
+msgid "Other reasons"
+msgstr "Autres Raisons"
+
+msgid "Praise and recommendation"
+msgstr "Louange et recommandation"
+
+msgid "Product"
+msgstr "Produit"
 
 msgid "Q-Notification"
 msgstr "Q-Notification"
 
+msgid "Q-Notification workflow"
+msgstr "Workflow de q-notification"
+
+msgid "Quality improvement"
+msgstr "Amélioration de qualité"
+
+msgid "Release"
+msgstr "Déclencheur"
+
+msgid "Request approval"
+msgstr "Demande de confirmation"
+
+msgid "Responsible"
+msgstr "Responsable"
+
+msgid "Retransfer this q-notification to draft status"
+msgstr "Retransférer cette q-notification à l'état de projet"
+
+msgid "Suggestion for improvement"
+msgstr "suggestion"
+
+msgid "This q-notification has been approved by QM."
+msgstr "Cette q-notification a été publié par le QM."
+
+msgid "This q-notification has been discarded."
+msgstr "Cette q-notification a été rejetée."
+
+msgid "This q-notification has been implemented successfully."
+msgstr "Cette q-notification a été mis en œuvre avec succès."
+
+msgid "This q-notification is a draft."
+msgstr "Cette q-notification est un brouillon."
+
+msgid "This q-notification is being checked up for effectiveness."
+msgstr "Cette q-notification est en cours de vérification de l'efficacité."
+
+msgid "This q-notification is not under any workflow."
+msgstr "Cette q-notification n'est pas soumis à un workflow."
+
+msgid "This q-notification is waiting for approval by QM."
+msgstr "Cette q-notification est en attente d'approbation par le QM."
+
 msgid "Title"
 msgstr "Titre"
 
-msgid "Cause"
-msgstr "cause"
+msgid "To be approved"
+msgstr "Pour être approuvée"
 
 msgid "To be filled out by QM"
 msgstr "à remplir par QM"
@@ -111,47 +153,5 @@ msgstr "à remplir par QM"
 msgid "To be filled out by Responsible"
 msgstr "à remplir par le responsable"
 
-msgid "Q-Notification workflow"
-msgstr "Workflow de q-notification"
-
-msgid "This q-notification is not under any workflow."
-msgstr "Cette q-notification n'est pas soumis à un workflow."
-
-msgid "This q-notification is a draft."
-msgstr "Cette q-notification est un brouillon."
-
-msgid "This q-notification is waiting for approval by QM."
-msgstr "Cette q-notification est en attente d'approbation par le QM."
-
-msgid "This q-notification has been approved by QM."
-msgstr "Cette q-notification a été publié par le QM."
-
-msgid "This q-notification is being checked up for effectiveness."
-msgstr "Cette q-notification est en cours de vérification de l'efficacité."
-
-msgid "This q-notification has been implemented successfully."
-msgstr "Cette q-notification a été mis en œuvre avec succès."
-
-msgid "This q-notification has been discarded."
-msgstr "Cette q-notification a été rejetée."
-
-msgid "Create"
-msgstr "Créer"
-
-msgid "Request approval"
-msgstr "Demande de confirmation"
-
-msgid "Discard"
-msgstr "écarter"
-
-msgid "Approve this q-notification for further process"
-msgstr "Approuver cette q-notification pour plus de modification"
-
 msgid "Transfer to effectiveness checkup"
 msgstr "Transferer vers les tests d'efficacité"
-
-msgid "Finish implementing"
-sgstr "Finir l'implementation"
-
-msgid "Retransfer this q-notification to draft status"
-msgstr "Retransférer cette q-notification à l'état de projet"

@@ -1,4 +1,32 @@
-%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1400055455" format="1.1" reprev="1" version="2"}%
+head	1.2;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2014.05.14.08.17.35;	author BaseUserMapping_333;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2014.05.14.08.17.35;	author BaseUserMapping_999;	state Exp;
+branches;
+next	;
+
+
+desc
+@none
+@
+
+
+1.2
+log
+@save topic
+@
+text
+@%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1400055455" format="1.1" reprev="1" version="2"}%
 %TMPL:INCLUDE{view}%
 
 %TMPL:DEF{"content"}%%TMPL:P{"simpleheader"}%
@@ -55,3 +83,19 @@ rows="99999"
 %META:PREFERENCE{name="NOWYSIWYG" title="NOWYSIWYG" type="Local" value="1"}%
 %META:PREFERENCE{name="ALLOWTOPICCHANGE" title="ALLOWTOPICCHANGE" type="Local" value="AdminUser"}%
 %META:PREFERENCE{name="WORKFLOW" title="WORKFLOW" type="Set" value=""}%
+@
+
+
+1.1
+log
+@autosave
+@
+text
+@d1 1
+a1 2
+%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1400055455" format="1.1" version="1"}%
+
+d20 1
+a20 1
+%TAB{"Effectiveness checkup" id="4"}%
+@
