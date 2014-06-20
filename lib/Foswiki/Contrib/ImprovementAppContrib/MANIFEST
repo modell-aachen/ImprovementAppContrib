@@ -1,9 +1,10 @@
+data/Sandbox/Improvements/CustomSkinCommentPluginTemplate.txt 0644
 data/Sandbox/Improvements/CustomSkinTransitionsTemplate.txt 0644
-data/Sandbox/Improvements/QNotificationEditTemplate.txt 0644
-data/Sandbox/Improvements/QNotificationForm.txt 0644
-data/Sandbox/Improvements/QNotificationTemplate.txt 0644
-data/Sandbox/Improvements/QNotificationViewTemplate.txt 0644
-data/Sandbox/Improvements/QNotificationWorkflow.txt 0644
+data/Sandbox/Improvements/IdeaEditTemplate.txt 0644
+data/Sandbox/Improvements/IdeaForm.txt 0644
+data/Sandbox/Improvements/IdeaTemplate.txt 0644
+data/Sandbox/Improvements/IdeaViewTemplate.txt 0644
+data/Sandbox/Improvements/IdeaWorkflow.txt 0644
 data/Sandbox/Improvements/WebActions.txt 0644
 data/Sandbox/Improvements/WebAtom.txt 0644
 data/Sandbox/Improvements/WebChanges.txt 0644

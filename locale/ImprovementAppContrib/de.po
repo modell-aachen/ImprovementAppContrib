@@ -1,4 +1,4 @@
-# German translation for the Improvement-Application
+# German translatin for the Improvement-Application
 # Translators: Modell Aachen
 msgid ""
 msgstr ""
@@ -15,14 +15,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.1.6\n"
 
-msgid "All q-notifications"
-msgstr "Alle Q-Meldungen"
+msgid "All ideas"
+msgstr "Alle Ideen"
 
 msgid "Approach"
 msgstr "Lösungsansatz"
 
-msgid "Approve this q-notification for further process"
-msgstr "Q-Meldung zur Bearbeitung freigeben"
+msgid "Approve this idea for further process"
+msgstr "Idee zur Bearbeitung freigeben"
 
 msgid "Approved"
 msgstr "Genehmigt"
@@ -36,20 +36,38 @@ msgstr "Audit"
 msgid "Cause"
 msgstr "Auslöser"
 
+msgid "closed"
+msgstr "erledigt"
+
+msgid "Closed measures"
+msgstr "Erledigte Maßnahmen"
+
+msgid "Closed on"
+msgstr "Erledigt am"
+
+msgid "Controlling"
+msgstr "Steuerung"
+
 msgid "Create"
 msgstr "Erstellen"
 
-msgid "Create new q-notification"
-msgstr "Neue Q-Meldung erstellen"
+msgid "Create new idea"
+msgstr "Neue Idee erstellen"
+
+msgid "Create new measure"
+msgstr "Neue Maßnahme erstellen"
+
+msgid "Created on"
+msgstr "Erstellt am"
 
 msgid "Creator"
 msgstr "Ersteller"
 
-msgid "Customer"
-msgstr "Kunde"
-
 msgid "Customer feedback"
 msgstr "Kundenreaktion"
+
+msgid "Date"
+msgstr "Datum"
 
 msgid "Decision"
 msgstr "Entscheid"
@@ -66,6 +84,15 @@ msgstr "Verwerfen"
 msgid "Discarded"
 msgstr "Verworfen"
 
+msgid "Due date"
+msgstr "Termin"
+
+msgid "effective"
+msgstr "wirksam"
+
+msgid "Effectiveness"
+msgstr "Wirksamkeit"
+
 msgid "Effectiveness checkup"
 msgstr "Wirksamkeitsprüfung"
 
@@ -81,11 +108,41 @@ msgstr "Idee"
 msgid "Implemented"
 msgstr "Umgesetzt"
 
+msgid "implemented"
+msgstr "umgesetzt"
+
 msgid "Internal error"
 msgstr "Interner Fehler"
 
+msgid "later"
+msgstr "später"
+
+msgid "Measure"
+msgstr "Maßnahme"
+
+msgid "Measures"
+msgstr "Maßnahmen"
+
+msgid "Measure to"
+msgstr "Maßnahme an"
+
 msgid "New"
 msgstr "Neu"
+
+msgid "no"
+msgstr "nein"
+
+msgid "no effective"
+msgstr "nicht wirksam"
+
+msgid "not implemented"
+msgstr "nicht umgesetzt"
+
+msgid "open"
+msgstr "offen"
+
+msgid "Open measures"
+msgstr "Offene Maßnahmen"
 
 msgid "Other reasons"
 msgstr "Andere Gründe"
@@ -95,12 +152,6 @@ msgstr "Lob und Empfehlung"
 
 msgid "Product"
 msgstr "Produkt"
-
-msgid "Q-Notification"
-msgstr "Q-Meldung"
-
-msgid "Q-Notification workflow"
-msgstr "Q-Meldung Workflow"
 
 msgid "Quality improvement"
 msgstr "Qualitätsverbesserung"
@@ -114,32 +165,50 @@ msgstr "Um Freigabe bitten"
 msgid "Responsible"
 msgstr "Verantwortlich"
 
-msgid "Retransfer this q-notification to draft status"
-msgstr "Q-Meldung erneut in Entwurfsstatus stellen"
+msgid "Retransfer this idea to draft status"
+msgstr "Idee erneut in Entwurfsstatus stellen"
+
+msgid "Review"
+msgstr "Bewertung"
+
+msgid "Room for improvement"
+msgstr "Verbesserungspotenzial"
+
+msgid "Short summary"
+msgstr "Kurzzusammenfassung"
+
+msgid "Short summary of idea"
+msgstr "Kurzzusammenfassung der Idee"
+
+msgid "Signal"
+msgstr "Ampel"
+
+msgid "since"
+msgstr "seit"
 
 msgid "Suggestion for improvement"
 msgstr "Verbesserungsvorschlag"
 
-msgid "This q-notification has been approved by QM."
-msgstr "Diese Q-Meldung ist durch die QM freigegeben worden."
+msgid "This idea has been approved by QM."
+msgstr "Diese Idee ist durch die QM freigegeben worden."
 
-msgid "This q-notification has been discarded."
-msgstr "Diese Q-Meldung wurde verworfen."
+msgid "This idea has been discarded."
+msgstr "Diese Idee wurde verworfen."
 
-msgid "This q-notification has been implemented successfully."
-msgstr "Diese Q-Meldung wurde erfolgreich umgesetzt."
+msgid "This idea has been implemented successfully."
+msgstr "Diese Idee wurde erfolgreich umgesetzt."
 
-msgid "This q-notification is a draft."
-msgstr "Diese Q-Meldung ist ein Entwurf."
+msgid "This idea is a draft."
+msgstr "Diese Idee ist ein Entwurf."
 
-msgid "This q-notification is being checked up for effectiveness."
-msgstr "Diese Q-Meldung befindet sich in der Wirksamkeitsprüfung."
+msgid "This idea is being checked up for effectiveness."
+msgstr "Diese Idee befindet sich in der Wirksamkeitsprüfung."
 
-msgid "This q-notification is not under any workflow."
-msgstr "Diese Q-Meldung unterliegt keinem Workflow."
+msgid "This idea is not under any workflow."
+msgstr "Diese Idee unterliegt keinem Workflow."
 
-msgid "This q-notification is waiting for approval by QM."
-msgstr "Diese Q-Meldung wartet auf eine Freigabe durch die QM."
+msgid "This idea is waiting for approval by QM."
+msgstr "Diese Idee wartet auf eine Freigabe durch die QM."
 
 msgid "Title"
 msgstr "Titel"
@@ -155,3 +224,9 @@ msgstr "Auszufüllen durch Verantwortlichen"
 
 msgid "Transfer to effectiveness checkup"
 msgstr "In Wirksamkeitsprüfung überführen"
+
+msgid "Type"
+msgstr "Typ"
+
+msgid "yes"
+msgstr "ja"

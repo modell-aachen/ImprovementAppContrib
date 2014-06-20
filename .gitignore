@@ -1,0 +1,4 @@
+*.lease
+*.txt,v
+*.changes
+Idea[0-9]*.txt

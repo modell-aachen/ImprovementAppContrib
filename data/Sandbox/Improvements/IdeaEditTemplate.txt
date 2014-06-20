@@ -1,0 +1,74 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1403263841" format="1.1" reprev="7" version="8"}%
+%TMPL:INCLUDE{edit}%
+
+%TMPL:DEF{"content"}%%TMPL:P{"simpleheader"}%
+%TMPL:P{"formstart"}%%TMPL:P{"formtop"}%
+
+<div class="widgetBlockTitle">%MAKETEXT{"Idea"}%</div>
+<div class="widgetBlockContent">
+
+%TMPL:P{"IdeaDraft"}%
+
+<div style='display:%IF{"'%WIKINAME%' ingroup 'QMGroup' OR '%WIKINAME%' ingroup 'AdminGroup'" then="inline" else="none"}%;'>
+<div style='display:%IF{"'%GETWORKFLOWROW{state}%'='DRAFT'" then="none" else="inline"}%;'>
+%TMPL:P{"Controlling"}%
+</div>
+</div>
+
+<div style='display:%IF{"('%QUERY{"Responsible"}%'='%WIKINAME%' OR '%WIKINAME%' ingroup 'QMGroup' OR '%WIKINAME%' ingroup 'AdminGroup')" then="inline" else="none"}%;'>
+<div style='display:%IF{"'%GETWORKFLOWROW{state}%'='EFFECTIVENESSCHECKUP' OR '%GETWORKFLOWROW{state}%'='IMPLEMENTED'" then="inline" else="none"}%;'>
+%TMPL:P{"EffectivenessCheck"}%
+</div>
+</div>
+
+</div>
+%TMPL:P{"topicinfo"}%
+%TMPL:P{"formend"}%
+%TMPL:END%
+
+%TMPL:DEF{"IdeaDraft"}%
+<table class="metaDataHead">
+<tr><td width="200px">%MAKETEXT{"Status"}%:</td><td><font color="%IF{"'%GETWORKFLOWROW{state}%'='DRAFT' OR '%GETWORKFLOWROW{state}%'='CHECKUP' OR '%GETWORKFLOWROW{state}%'='DISCARDED'" then="red" else="green"}%">%MAKETEXT{"%GETWORKFLOWROW{message}%"}% ( %MAKETEXT{"since"}% %WORKFLOWMETA{"LASTTIME_%GETWORKFLOWROW{state}%"}%)</font></td></tr>
+<tr><td>%MAKETEXT{"Created on"}%:</td><td>%WORKFLOWMETA{"LASTTIME_DRAFT"}%</td></tr>
+<tr><td>%MAKETEXT{"Creator"}%:</td><td>%RENDERFORDISPLAY{field="Creator" format="$value"}%</td></tr>
+</table>
+%BR%
+<table class="metaDataHead">
+<tr><td width="200px">%MAKETEXT{"Title"}%<font color="red">*</font>:</td><td>%RENDERFOREDIT{field="TopicTitle" format="$edit"}%</td></tr>
+<tr><td>%MAKETEXT{"Short summary"}%:</td><td>%RENDERFOREDIT{field="Summary" format="$edit"}%</td></tr>
+<tr><td>%MAKETEXT{"Process"}%:</td><td>%RENDERFOREDIT{field="Process" format="$edit"}%</td></tr>
+<tr><td>%MAKETEXT{"Room for improvement"}%:</td><td>%RENDERFOREDIT{field="RoomForImprovement" format="$edit"}%</td></tr>
+<tr><td>%MAKETEXT{"Approach"}%:</td><td>%RENDERFOREDIT{field="Approach" format="$edit"}%</td></tr>
+</table>
+%TMPL:END%
+
+%TMPL:DEF{"Controlling"}%
+---++%MAKETEXT{"Controlling"}%
+<table class="metaDataHead">
+<tr><td width="200px">%MAKETEXT{"Assessment"}%:</td><td>%RENDERFOREDIT{field="Assessment" format="$edit"}%</td></tr>
+<tr><td>%MAKETEXT{"Responsible"}%:</td><td>%RENDERFOREDIT{field="Responsible" format="$edit"}%</td></tr>
+<tr><td>%MAKETEXT{"Decision"}%:</td><td>%RENDERFOREDIT{field="Decision" format="$edit"}%</td></tr>
+</table>
+%TMPL:END%
+
+%TMPL:DEF{"Measures"}%
+---++%MAKETEXT{"Measures"}%
+<table class="metaDataHead">
+<tr><td width="200px">%MAKETEXT{"Description"}%:</td><td>%RENDERFOREDIT{field="Description" format="$edit"}%</td></tr>
+</table>
+%TMPL:END%
+
+%TMPL:DEF{"EffectivenessCheck"}%
+---++%MAKETEXT{"Effectiveness checkup"}%
+<table class="metaDataHead">
+<tr><td width="200px">%MAKETEXT{"Effectiveness"}%:</td><td>%RENDERFOREDIT{field="Effectiveness" format="$edit"}%</td></tr>
+</table>
+%TMPL:END%
+
+%META:TOPICMOVED{by="BaseUserMapping_333" date="1397130338" from="Sandbox/Improvements.IdeenpoolEditTemplate" to="Sandbox/Improvements.QNotificationEditTemplate"}%
+%META:WORKFLOWHISTORY{value="<br>BROUILLON -- 06.01.2014"}%
+%META:WORKFLOW{name="BROUILLON" LASTPROCESSOR_BROUILLON="Main.AdminUser" LASTTIME_BROUILLON="06.01.2014" LASTVERSION_BROUILLON="1" LEAVING_NEU="Main.AdminUser" Remark="" Revision="0" TASK="" TASK_DUE=""}%
+%META:WRKFLWCONTRIBUTORS{name="BROUILLON" value="Main.AdminUser"}%
+%META:PREFERENCE{name="WORKFLOW" title="WORKFLOW" type="Local" value=""}%
+%META:PREFERENCE{name="NOWYSIWYG" title="NOWYSIWYG" type="Local" value="1"}%
+%META:PREFERENCE{name="ALLOWTOPICCHANGE" title="ALLOWTOPICCHANGE" type="Local" value="AdminUser"}%

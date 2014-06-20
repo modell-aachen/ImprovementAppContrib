@@ -1,46 +1,46 @@
-%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1400055455" format="1.1" reprev="1" version="2"}%
+%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1403264311" format="1.1" reprev="3" version="3"}%
 %TMPL:INCLUDE{view}%
 
 %TMPL:DEF{"content"}%%TMPL:P{"simpleheader"}%
 
-<div class="widgetBlockTitle">%MAKETEXT{"All q-notifications"}%</div>
+<div class="widgetBlockTitle">%MAKETEXT{"All ideas"}%</div>
 <div class="widgetBlockContent">
 %TABPANE{class="simple" select="%URLPARAM{"table"}%"}%
 %TAB{"%MAKETEXT{"New"}%" id="1"}%
-%TMPL:P{"searchForQNotifications" state="DRAFT"}%
+%TMPL:P{"searchForIdeas" state="DRAFT"}%
 %ENDTAB% 
 %TAB{"%MAKETEXT{"To be approved"}%" id="2"}%
 %TABLE{%TABLETHEMEPARAM% dataalign="left"}% 
-%TMPL:P{"searchForQNotifications" state="CHECKUP"}%
+%TMPL:P{"searchForIdeas" state="CHECKUP"}%
 %ENDTAB%
 %TAB{"%MAKETEXT{"Approved"}%" id="3"}%
 %TABLE{%TABLETHEMEPARAM% dataalign="left"}%
-%TMPL:P{"searchForQNotifications" state="APPROVED"}% 
+%TMPL:P{"searchForIdeas" state="APPROVED"}% 
 %ENDTAB%  
 %TAB{"%MAKETEXT{"Effectiveness checkup"}%" id="4"}%
 %TABLE{%TABLETHEMEPARAM% dataalign="left"}% 
-%TMPL:P{"searchForQNotifications" state="EFFECTIVENESSCHECKUP"}% 
+%TMPL:P{"searchForIdeas" state="EFFECTIVENESSCHECKUP"}% 
 %ENDTAB% 
 %TAB{"%MAKETEXT{"Implemented"}%" id="5"}%
 %TABLE{%TABLETHEMEPARAM% dataalign="left"}% 
-%TMPL:P{"searchForQNotifications" state="IMPLEMENTED"}% 
+%TMPL:P{"searchForIdeas" state="IMPLEMENTED"}% 
 %ENDTAB%
 %TAB{"%MAKETEXT{"Discarded"}%" id="6"}%
-%TMPL:P{"searchForQNotifications" state="DISCARDED"}% 
+%TMPL:P{"searchForIdeas" state="DISCARDED"}% 
 %ENDTAB%
 %ENDTABPANE%
 </div>
 %TMPL:END%
 
-%TMPL:DEF{"searchForQNotifications"}%
+%TMPL:DEF{"searchForIdeas"}%
 %TABLE{%TABLETHEMEPARAM% dataalign="left"}% 
-| *%MAKETEXT{"Title"}%* | *%MAKETEXT{"Cause"}%* | *%MAKETEXT{"Creator"}%* | *%MAKETEXT{"Responsible"}%* |
+| *%MAKETEXT{"Title"}%* | *%MAKETEXT{"Short summary"}%* | *%MAKETEXT{"Creator"}%* | *%MAKETEXT{"Responsible"}%* |
 %SOLRSEARCH{
-"form:*QNotificationForm process_state_s:%state%" 
+"form:*IdeaForm process_state_s:%state%" 
 web="%WEB%" 
-fields="web, topic, field_TopicTitle_s, field_Cause_s, field_Creator_s, field_Responsible_lst"
+fields="web, topic, field_TopicTitle_s, field_Summary_s, field_Creator_s, field_Responsible_lst"
 header=""
-format="| <a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$topic\">$field_TopicTitle_s</a> | $field_Cause_s | $field_Creator_s | $field_Responsible_lst | $n"
+format="| <a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$topic\">$field_TopicTitle_s</a> | $field_Summary_s | $field_Creator_s | $field_Responsible_lst | $n"
 footer=""
 order="title" 
 rows="99999" 
