@@ -1,0 +1,25 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1397129987" format="1.1" reprev="3" version="3"}%
+| *Name* | *Type* | *Size* | *Values* | *Tooltip message* | *Attributes* |
+| TopicTitle | text | 48 | | | M |
+| Creator | text | 50 | %WIKINAME% | %MAKETEXT{"Creator"}% | |
+| Cause | checkbox+values | 3 | %MAKETEXT{"Customer feedback"}%=Customer feedback, %MAKETEXT{"Suggestion for improvement"}%=Suggestion for improvement, %MAKETEXT{"Internal error"}%=Internal Error, %MAKETEXT{"Idea"}%=Idea, %MAKETEXT{"Audit"}%=Audit, %MAKETEXT{"Praise and recommendation"}%=Praise and recommendation, %MAKETEXT{"Quality improvement"}%=Quality improvement, %MAKETEXT{"Delivery error"}%=Delivery error, %MAKETEXT{"Other reasons"}%=Other reasons  | %MAKETEXT{"Cause"}% | |
+| Customer | textboxlist | 48 | | %MAKETEXT{"Customer"}% | |
+| Product | textboxlist | 48 | | %MAKETEXT{"Product"}% | |
+| Event | textarea | 48x3 | | %MAKETEXT{"Event"}% | |
+| Approach | textarea | 48x3 | | %MAKETEXT{"Approach"}% | |
+| Assessment | textarea | 48x3 | | %MAKETEXT{"Assessment"}% | |
+| Responsible | textboxlist | 50 mustMatch limit="1" | %USERAUTOCOMPLETE% | %MAKETEXT{"Responsible"}% | |
+| Decision | textarea | 48x3 | | %MAKETEXT{"Decision"}% | |
+| Description | textarea | 48x3 | | %MAKETEXT{"Description"}% | |
+
+%STARTSECTION{type="templateonly"}%
+   * Set ALLOWTOPICCHANGE = AdminGroup
+   * Set WORKFLOW =
+   * Set NOWYSIWYG = 1
+%ENDSECTION{type="templateonly"}%
+
+%META:TOPICMOVED{by="BaseUserMapping_333" date="1397129166" from="Sandbox/Improvements.DocumentForm" to="Sandbox/Improvements.QNotificationForm"}%
+%META:WORKFLOWHISTORY{value="<br>BROUILLON -- 06.01.2014"}%
+%META:WORKFLOW{name="BROUILLON" LASTPROCESSOR_BROUILLON="Main.AdminUser" LASTTIME_BROUILLON="06.01.2014" LASTVERSION_BROUILLON="1" LEAVING_NEU="Main.AdminUser" Remark="" Revision="0" TASK="" TASK_DUE=""}%
+%META:WRKFLWCONTRIBUTORS{name="BROUILLON" value="Main.AdminUser"}%
+%META:PREFERENCE{name="DISPLAYCOMMENTS" value="off"}%

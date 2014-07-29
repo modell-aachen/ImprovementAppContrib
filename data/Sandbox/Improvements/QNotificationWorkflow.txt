@@ -1,0 +1,42 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1397134696" format="1.1" reprev="2" version="2"}%
+---++ Defaults
+| *State type* | *Left tab* | *Right tab* | *Approved* |
+| approved | %MAKETEXT{"Q-Notification"}% | | 1 |
+| draft | %MAKETEXT{"Q-Notification"}% | | 1 |
+| discussion | %MAKETEXT{"Q-Notification"}% | | 1 |
+
+---++ States
+%EDITTABLE{}%
+| *State* | *Allow Edit* | *Allow Move* | *Allow Comment* | *Message* | *State Type* |
+| NEW | LOGGEDIN | nobody | nobody | This q-notification is not under any workflow. | draft |
+| DRAFT | LOGGEDIN | nobody | nobody | This q-notification is a draft. | draft |
+| CHECKUP | LOGGEDIN | nobody | nobody | This q-notification is waiting for approval by QM. | draft |
+| APPROVED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | nobody | nobody | This q-notification has been approved by QM. | approved |
+| EFFECTIVENESSCHECKUP | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | nobody | nobody | This q-notification is being checked up for effectiveness. | approved |
+| IMPLEMENTED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | nobody | nobody | This q-notification has been implemented successfully. | approved |
+| DISCARDED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | nobody | nobody | This q-notification has been discarded. | draft |
+
+
+ 
+---++ Transitions
+%EDITTABLE{}%
+| *State* | *Action* | *Next State* | *Allowed* | *Notify* | *Condition* | *Warning* | *Attribute* |
+| NEW | Create | DRAFT | LOGGEDIN | | | | NEW |
+| NEW | Put under CIP | DRAFT | LOGGEDIN | | | | |
+| DRAFT | Request approval | CHECKUP | LOGGEDIN | | | | REMARK |
+| DRAFT | Discard | DISCARDED | LOGGEDIN | | | | REMARK |
+| CHECKUP | Approve this q-notification for further process | FREIGEGEBEN | QMGroup, Main.KeyUserGroup | | | | REMARK |
+| CHECKUP | Discard | DISCARDED | QMGroup, Main.KeyUserGroup | | | | REMARK |
+| APPROVED | Transfer to effectiveness checkup | EFFECTIVENESSCHECKUP | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | | | | REMARK |
+| APPROVED | Discard | DISCARDED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | | | | REMARK |
+| EFFECTIVENESSCHECKUP | Finish implementing | IMPLEMENTED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | | | | REMARK |
+| EFFECTIVENESSCHECKUP | Discard | DISCARDED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | | | | REMARK |
+| IMPLEMENTED | Discard | DISCARDED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | | | | REMARK |
+| DISCARDED | Retransfer this q-notification to draft status | DRAFT | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | | | | REMARK |
+
+   * Set NOWYSIWYG=1
+   * Set WORKFLOW=
+   * Set VIEW_TEMPLATE = WorkflowView
+   * Set ALLOWTOPICCHANGE = AdminGroup
+
+%META:TOPICMOVED{by="BaseUserMapping_333" date="1397132966" from="Sandbox/Improvements.DocumentApprovalWorkflow" to="Sandbox/Improvements.QNotificationWorkflow"}%

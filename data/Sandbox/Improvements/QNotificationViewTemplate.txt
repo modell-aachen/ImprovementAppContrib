@@ -1,0 +1,52 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="save topic" date="1397135797" format="1.1" reprev="5" version="5"}%
+%TMPL:INCLUDE{view}%
+
+%TMPL:DEF{"content"}%%TMPL:P{"simpleheader"}%
+
+<div class="widgetBlockTitle">%MAKETEXT{"Q-Notification"}%</div>
+<div class="widgetBlockContent">
+<table class="metaDataHead">
+<tr><td width="200px">%MAKETEXT{"Status"}%:</td><td><font color="%IF{"'%GETWORKFLOWROW{state}%'='DRAFT' OR '%GETWORKFLOWROW{state}%'='CHECKUP' OR '%GETWORKFLOWROW{state}%'='DISCARDED'" then="red" else="green"}%">%MAKETEXT{"%GETWORKFLOWROW{message}%"}%</font></td></tr>
+<tr><td>%MAKETEXT{"Title"}%:</td><td>%RENDERFORDISPLAY{field="TopicTitle" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Creator"}%:</td><td>%RENDERFORDISPLAY{field="Creator" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Cause"}%:</td><td>%RENDERFORDISPLAY{field="Cause" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Customer"}%:</td><td>%RENDERFORDISPLAY{field="Customer" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Product"}%:</td><td>%RENDERFORDISPLAY{field="Product" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Event"}%:</td><td>%RENDERFORDISPLAY{field="Event" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Approach"}%:</td><td>%RENDERFORDISPLAY{field="Approach" format="$value"}%</td></tr>
+</table>
+
+---++%MAKETEXT{"To be filled out by QM"}%
+<table class="metaDataHead">
+<tr><td width="200px">%MAKETEXT{"Assessment"}%:</td><td>%RENDERFORDISPLAY{field="Assessment" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Responsible"}%:</td><td>%RENDERFORDISPLAY{field="Responsible" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Decision"}%:</td><td>%RENDERFORDISPLAY{field="Decision" format="$value"}%</td></tr>
+</table>
+---++%MAKETEXT{"To be filled out by Responsible"}%
+<table class="metaDataHead">
+<tr><td width="200px">%MAKETEXT{"Description"}%:</td><td>%RENDERFORDISPLAY{field="Description" format="$value"}%</td></tr>
+</table>
+</div>
+%TMPL:END%
+
+%TMPL:DEF{"kvptransitions"}%
+<div class="modacKVPtable">
+| *%MAKETEXT{"Q-Notification workflow"}%* ||
+| %MAKETEXT{"State"}% | %MAKETEXT{"%GETWORKFLOWROW{message}%"}% |
+| %MAKETEXT{"Next step"}% | %WORKFLOWTRANSITION% |
+| %MAKETEXT{"Last editing person"}% | %REVINFO{format="$username"}% |
+</div>
+%TMPL:END%
+
+
+
+
+
+
+%META:TOPICMOVED{by="BaseUserMapping_333" date="1397129216" from="Sandbox/Improvements.IdeenpoolViewTemplate" to="Sandbox/Improvements.QNotificationViewTemplate"}%
+%META:WORKFLOWHISTORY{value="<br>BROUILLON -- 06.01.2014"}%
+%META:WORKFLOW{name="BROUILLON" LASTPROCESSOR_BROUILLON="Main.AdminUser" LASTTIME_BROUILLON="06.01.2014" LASTVERSION_BROUILLON="1" LEAVING_NEU="Main.AdminUser" Remark="" Revision="0" TASK="" TASK_DUE=""}%
+%META:WRKFLWCONTRIBUTORS{name="BROUILLON" value="Main.AdminUser"}%
+%META:PREFERENCE{name="NOWYSIWYG" title="NOWYSIWYG" type="Local" value="1"}%
+%META:PREFERENCE{name="ALLOWTOPICCHANGE" title="ALLOWTOPICCHANGE" type="Local" value="AdminUser"}%
+%META:PREFERENCE{name="WORKFLOW" title="WORKFLOW" type="Set" value=""}%

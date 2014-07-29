@@ -1,0 +1,16 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1397130550" format="1.1" reprev="2" version="2"}%
+%STARTSECTION{type="templateonly"}%
+   * Set ALLOWTOPICCHANGE = AdminGroup
+   * Set WORKFLOW =
+   * Set DISPLAYCOMMENTS = off
+   * Set NOWYSIWYG = 1
+%ENDSECTION{type="templateonly"}%
+
+
+%META:TOPICMOVED{by="BaseUserMapping_333" date="1397130550" from="Sandbox/Improvements.IdeenpoolTemplate" to="Sandbox/Improvements.QNotificationTemplate"}%
+%META:WORKFLOWHISTORY{value="<br>BROUILLON -- 06.01.2014"}%
+%META:WORKFLOW{name="BROUILLON" LASTPROCESSOR_BROUILLON="Main.AdminUser" LASTTIME_BROUILLON="06.01.2014" LASTVERSION_BROUILLON="1" LEAVING_NEU="Main.AdminUser" Remark="" Revision="0" TASK="" TASK_DUE=""}%
+%META:PREFERENCE{name="VIEW_TEMPLATE" title="VIEW_TEMPLATE" type="Set" value="QNotificationView"}%
+%META:PREFERENCE{name="EDIT_TEMPLATE" title="EDIT_TEMPLATE" type="Set" value="QNotificationEdit"}%
+%META:PREFERENCE{name="DISPLAYCOMMENTS" title="DISPLAYCOMMENTS" type="Set" value="on"}%
+%META:WRKFLWCONTRIBUTORS{name="BROUILLON" value="Main.AdminUser"}%

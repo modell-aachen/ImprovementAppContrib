@@ -1,0 +1,121 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1403263858" format="1.1" reprev="6" version="7"}%
+%TMPL:INCLUDE{view}%
+
+%TMPL:DEF{"content"}%%TMPL:P{"simpleheader"}%
+
+<div class="widgetBlockTitle">%MAKETEXT{"Idea"}%</div>
+<div class="widgetBlockContent">
+%TMPL:P{"IdeaDraft"}%
+
+<div style='display:%IF{"'%WIKINAME%' ingroup 'QMGroup' OR '%WIKINAME%' ingroup 'AdminGroup'" then="inline" else="none"}%;'>
+<div style='display:%IF{"'%GETWORKFLOWROW{state}%'!='DRAFT'" then="inline" else="none"}%;'>
+%TMPL:P{"Controlling"}%
+</div>
+</div>
+
+
+<div style='display:%IF{"'%QUERY{"Responsible"}%'='%WIKINAME%' OR '%WIKINAME%' ingroup 'QMGroup' OR '%WIKINAME%' ingroup 'AdminGroup'" then="block" else="none"}%;'>
+<div style='display:%IF{"'%GETWORKFLOWROW{state}%'='DRAFT' OR '%GETWORKFLOWROW{state}%'='CHECKUP'" then="none" else="block"}%;'>
+%TMPL:P{"Measures"}%
+</div>
+</div>
+
+<div style='display:%IF{"('%QUERY{"Responsible"}%'='%WIKINAME%' OR '%WIKINAME%' ingroup 'QMGroup' OR '%WIKINAME%' ingroup 'AdminGroup')" then="inline" else="none"}%;'>
+<div style='display:%IF{"'%GETWORKFLOWROW{state}%'='EFFECTIVENESSCHECKUP' OR '%GETWORKFLOWROW{state}%'='IMPLEMENTED'" then="inline" else="none"}%;'>
+%TMPL:P{"EffectivenessCheck"}%
+</div>
+</div>
+
+</div>
+%TMPL:END%
+
+
+%TMPL:DEF{"IdeaDraft"}%
+<table class="metaDataHead">
+<tr><td width="200px">%MAKETEXT{"Status"}%:</td><td><font color="%IF{"'%GETWORKFLOWROW{state}%'='DRAFT' OR '%GETWORKFLOWROW{state}%'='CHECKUP' OR '%GETWORKFLOWROW{state}%'='DISCARDED'" then="red" else="green"}%">%MAKETEXT{"%GETWORKFLOWROW{message}%"}% ( %MAKETEXT{"since"}% %WORKFLOWMETA{"LASTTIME_%GETWORKFLOWROW{state}%"}%)</font></td></tr>
+<tr><td>%MAKETEXT{"Created on"}%:</td><td>%WORKFLOWMETA{"LASTTIME_DRAFT"}%</td></tr>
+<tr><td>%MAKETEXT{"Creator"}%:</td><td>%RENDERFORDISPLAY{field="Creator" format="$value"}%</td></tr>
+</table>
+%BR%
+<table class="metaDataHead">
+<tr><td width="200px">%MAKETEXT{"Title"}%:</td><td>%RENDERFORDISPLAY{field="TopicTitle" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Short summary"}%:</td><td>%RENDERFORDISPLAY{field="Summary" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Process"}%:</td><td>[[%RENDERFORDISPLAY{field="Process" format="$value"}%]]</td></tr>
+<tr><td>%MAKETEXT{"Room for improvement"}%:</td><td>%RENDERFORDISPLAY{field="RoomForImprovement" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Approach"}%:</td><td>%RENDERFORDISPLAY{field="Approach" format="$value"}%</td></tr>
+</table>
+%TMPL:END%
+
+%TMPL:DEF{"Controlling"}%
+---++%MAKETEXT{"Controlling"}%
+<table class="metaDataHead">
+<tr><td width="200px">%MAKETEXT{"Assessment"}%:</td><td>%RENDERFORDISPLAY{field="Assessment" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Responsible"}%:</td><td>%RENDERFORDISPLAY{field="Responsible" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Decision"}%:</td><td>%RENDERFORDISPLAY{field="Decision" format="$value"}%</td></tr>
+</table>
+%TMPL:END%
+
+%TMPL:DEF{"Measures"}%
+---++%MAKETEXT{"Measures"}%
+<div class="modacPrintHide">
+%BUTTON{"%MAKETEXT{"Create new measure"}%" href="#actiondialog" class="jqUIDialogLink {cache:'false'}"}%
+%CLEAR%
+%STARTSECTION{"actiondialog"}%
+<div id="actiondialog" title="%MAKETEXT{"Create new measure"}%" class="jqUIDialog {draggable:true, resizable: true, height:400, width:600}">
+%COMMENT{type="action3"  location="This should be unique text AIVOqxWgyT"}%
+</div>
+%ENDSECTION{"actiondialog"}%
+</div>
+
+<div class="JQTabPrintSelected">
+%TABPANE{class="simple"}%
+%TAB{"%MAKETEXT{"Open measures"}%" id="tab1"}%
+<a href="%SCRIPTURL{"view"}%/%SYSTEMWEB%/MAPrinceModPrintDialog?skin=text&section=dialog&pweb=%ENCODE{"%INCLUDINGWEB%" type="url"}%&ptopic=%ENCODE{"%INCLUDINGTOPIC%" type="url"}%&landscape=%LANDSCAPE{default="0"}%&showtab=tab1&printParams=showtab" class="jqUIDialogLink">%ICON{"pdf"}%</a>
+<div id="SignalOpenMeasures">
+%ACTIONSEARCH{web="%WEB%" topic="%BASETOPIC%" state="open" sort="$createdate,$who,$due" jqsortable="1" jqsortopts="widgets: ['zebra'], sortList: [[0,1],[0,1]], headers: { 0: { sorter: 'qwikiDate' }, 6: { sorter: 'qwikiDate' }, 7: { sorter: 'qwikiDate' }, 8: { sorter: false }, 9: { sorter: false }, 10: { sorter: false } }"}%
+</div>
+%ENDTAB%
+%TAB{"%MAKETEXT{"Closed measures"}%" id="tab2"}%
+<a href="%SCRIPTURL{"view"}%/%SYSTEMWEB%/MAPrinceModPrintDialog?skin=text&section=dialog&pweb=%ENCODE{"%INCLUDINGWEB%" type="url"}%&ptopic=%ENCODE{"%INCLUDINGTOPIC%" type="url"}%&landscape=%LANDSCAPE{default="0"}%&showtab=tab2&printParams=showtab" class="jqUIDialogLink">%ICON{"pdf"}%</a>
+<div id="SignalClosedMeasures">
+%ACTIONSEARCH{web="%WEB%" topic="%BASETOPIC%" state="closed" sort="$createdate,$who,$due" jqsortable="1" jqsortopts="widgets: ['zebra'], sortList: [[0,1],[0,1]], headers: { 0: { sorter: 'qwikiDate' }, 6: { sorter: 'qwikiDate' }, 7: { sorter: 'qwikiDate' }, 8: { sorter: false }, 9: { sorter: false }, 10: { sorter: false } }"}%
+</div>
+%ENDTAB%
+</div>
+%AMPEL{"SignalOpenMeasures" WARN="%SIGNAL_PREWARNTIME{default="7"}%" DATE="$percntMAKETEXT{\"Due date\"}$percnt" DST="$percntMAKETEXT{\"Signal\"}$percnt" DONE="Status" COND="closed" LIVEQUERY="1"}%
+%AMPEL{"SignalClosedMeasures" WARN="%SIGNAL_PREWARNTIME{default="7"}%" DATE="$percntMAKETEXT{\"Due date\"}$percnt" DST="$percntMAKETEXT{\"Signal\"}$percnt" DONE="Status" COND="closed" LIVEQUERY="1"}%
+</div>
+
+%TMPL:END%
+
+%TMPL:DEF{"EffectivenessCheck"}%
+---++%MAKETEXT{"Effectiveness checkup"}%
+<table class="metaDataHead">
+<tr><td width="200px">%MAKETEXT{"Effectiveness"}%:</td><td>%RENDERFORDISPLAY{field="Effectiveness" format="$value"}%</td></tr>
+</table>
+%TMPL:END%
+
+
+%TMPL:DEF{"kvptransitions"}%
+<div class="modacKVPtable">
+| *%MAKETEXT{"Idea workflow"}%* ||
+| %MAKETEXT{"State"}% | %MAKETEXT{"%GETWORKFLOWROW{message}%"}% |
+| %MAKETEXT{"Next step"}% | %WORKFLOWTRANSITION% |
+| %MAKETEXT{"Last editing person"}% | %REVINFO{format="$username"}% |
+</div>
+%TMPL:END%
+
+
+
+
+
+
+
+
+%META:TOPICMOVED{by="BaseUserMapping_333" date="1397129216" from="Sandbox/Improvements.IdeenpoolViewTemplate" to="Sandbox/Improvements.QNotificationViewTemplate"}%
+%META:WORKFLOWHISTORY{value="<br>BROUILLON -- 06.01.2014"}%
+%META:WORKFLOW{name="BROUILLON" LASTPROCESSOR_BROUILLON="Main.AdminUser" LASTTIME_BROUILLON="06.01.2014" LASTVERSION_BROUILLON="1" LEAVING_NEU="Main.AdminUser" Remark="" Revision="0" TASK="" TASK_DUE=""}%
+%META:WRKFLWCONTRIBUTORS{name="BROUILLON" value="Main.AdminUser"}%
+%META:PREFERENCE{name="NOWYSIWYG" title="NOWYSIWYG" type="Local" value="1"}%
+%META:PREFERENCE{name="ALLOWTOPICCHANGE" title="ALLOWTOPICCHANGE" type="Local" value="AdminUser"}%
+%META:PREFERENCE{name="WORKFLOW" title="WORKFLOW" type="Set" value=""}%
