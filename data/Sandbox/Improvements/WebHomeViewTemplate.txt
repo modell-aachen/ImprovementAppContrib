@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1403264311" format="1.1" reprev="3" version="3"}%
+%META:TOPICINFO{author="BaseUserMapping_333" comment="save topic" date="1406732164" format="1.1" reprev="3" version="3"}%
 %TMPL:INCLUDE{view}%
 
 %TMPL:DEF{"content"}%%TMPL:P{"simpleheader"}%
@@ -34,13 +34,13 @@
 
 %TMPL:DEF{"searchForIdeas"}%
 %TABLE{%TABLETHEMEPARAM% dataalign="left"}% 
-| *%MAKETEXT{"Title"}%* | *%MAKETEXT{"Short summary"}%* | *%MAKETEXT{"Creator"}%* | *%MAKETEXT{"Responsible"}%* |
+| *%MAKETEXT{"Short description"}%* | *%MAKETEXT{"Creator"}%* | *%MAKETEXT{"Responsible"}%* |
 %SOLRSEARCH{
 "form:*IdeaForm process_state_s:%state%" 
 web="%WEB%" 
 fields="web, topic, field_TopicTitle_s, field_Summary_s, field_Creator_s, field_Responsible_lst"
 header=""
-format="| <a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$topic\">$field_TopicTitle_s</a> | $field_Summary_s | $field_Creator_s | $field_Responsible_lst | $n"
+format="| <a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$topic\">$field_TopicTitle_s</a> | $field_Creator_s | $field_Responsible_lst | $n"
 footer=""
 order="title" 
 rows="99999" 
