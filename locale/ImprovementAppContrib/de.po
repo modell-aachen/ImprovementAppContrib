@@ -30,6 +30,9 @@ msgstr "Genehmigt"
 msgid "Assessment"
 msgstr "Bewertung"
 
+msgid "Assigned process"
+msgstr "Zugeordneter Prozess"
+
 msgid "Audit"
 msgstr "Audit"
 
@@ -173,6 +176,9 @@ msgstr "Bewertung"
 
 msgid "Room for improvement"
 msgstr "Verbesserungspotenzial"
+
+msgid "Short description"
+msgstr "Kurzbeschreibung"
 
 msgid "Short summary"
 msgstr "Kurzzusammenfassung"

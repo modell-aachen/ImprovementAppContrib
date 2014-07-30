@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1403263841" format="1.1" reprev="7" version="8"}%
+%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1406731441" format="1.1" reprev="2" version="2"}%
 %TMPL:INCLUDE{edit}%
 
 %TMPL:DEF{"content"}%%TMPL:P{"simpleheader"}%
@@ -28,15 +28,18 @@
 
 %TMPL:DEF{"IdeaDraft"}%
 <table class="metaDataHead">
-<tr><td width="200px">%MAKETEXT{"Status"}%:</td><td><font color="%IF{"'%GETWORKFLOWROW{state}%'='DRAFT' OR '%GETWORKFLOWROW{state}%'='CHECKUP' OR '%GETWORKFLOWROW{state}%'='DISCARDED'" then="red" else="green"}%">%MAKETEXT{"%GETWORKFLOWROW{message}%"}% ( %MAKETEXT{"since"}% %WORKFLOWMETA{"LASTTIME_%GETWORKFLOWROW{state}%"}%)</font></td></tr>
-<tr><td>%MAKETEXT{"Created on"}%:</td><td>%WORKFLOWMETA{"LASTTIME_DRAFT"}%</td></tr>
+%IF{"'%URLPARAM{first}%'='first'" then="<!--" else=""}%
+<tr><td>%MAKETEXT{"Status"}%:</td><td><font color="%IF{"'%GETWORKFLOWROW{state}%'='DRAFT' OR '%GETWORKFLOWROW{state}%'='CHECKUP' OR '%GETWORKFLOWROW{state}%'='DISCARDED'" then="red" else="green"}%">
+%MAKETEXT{"%GETWORKFLOWROW{message}%"}% ( %MAKETEXT{"since"}% %WORKFLOWMETA{"LASTTIME_%GETWORKFLOWROW{state}%"}%)</font>
+%IF{"'%URLPARAM{first}%'='first'" then="-->" else=""}%
+</td></tr>
+<tr><td width="200px">%MAKETEXT{"Created on"}%:</td><td>%WORKFLOWMETA{"LASTTIME_DRAFT"}%</td></tr>
 <tr><td>%MAKETEXT{"Creator"}%:</td><td>%RENDERFORDISPLAY{field="Creator" format="$value"}%</td></tr>
 </table>
 %BR%
 <table class="metaDataHead">
-<tr><td width="200px">%MAKETEXT{"Title"}%<font color="red">*</font>:</td><td>%RENDERFOREDIT{field="TopicTitle" format="$edit"}%</td></tr>
-<tr><td>%MAKETEXT{"Short summary"}%:</td><td>%RENDERFOREDIT{field="Summary" format="$edit"}%</td></tr>
-<tr><td>%MAKETEXT{"Process"}%:</td><td>%RENDERFOREDIT{field="Process" format="$edit"}%</td></tr>
+<tr><td width="200px">%MAKETEXT{"Short description"}%<font color="red">*</font>:</td><td>%RENDERFOREDIT{field="TopicTitle" format="$edit"}%</td></tr>
+<tr><td>%MAKETEXT{"Assigned process"}%:</td><td>%RENDERFOREDIT{field="Process" format="$edit"}%</td></tr>
 <tr><td>%MAKETEXT{"Room for improvement"}%:</td><td>%RENDERFOREDIT{field="RoomForImprovement" format="$edit"}%</td></tr>
 <tr><td>%MAKETEXT{"Approach"}%:</td><td>%RENDERFOREDIT{field="Approach" format="$edit"}%</td></tr>
 </table>

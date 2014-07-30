@@ -1,9 +1,9 @@
-%META:TOPICINFO{author="BaseUserMapping_333" comment="save topic" date="1400507757" format="1.1" reprev="3" version="2"}%
-   * <a href='%SCRIPTURL{edit}%/%WEB%/IdeaAUTOINC0000?formtemplate=IdeaForm;templatetopic=%WEB%.IdeaTemplate;template=IdeaEdit;t=%GMTIME{$epoch}%'>%MAKETEXT{"Create new idea"}%</a>
+%META:TOPICINFO{author="BaseUserMapping_333" comment="save topic" date="1406731392" format="1.1" reprev="3" version="2"}%
+   * <a href='%SCRIPTURL{edit}%/%WEB%/IdeaAUTOINC0000?formtemplate=IdeaForm;templatetopic=%WEB%.IdeaTemplate;template=IdeaEdit;t=%GMTIME{$epoch}%;first=first'>%MAKETEXT{"Create new idea"}%</a>
 
 %META:WORKFLOWHISTORY{value="<br />DRAFT -- 10.04.2014"}%
 %META:WORKFLOW{name="DRAFT" LASTPROCESSOR_DRAFT="Main.AdminUser" LASTTIME_DRAFT="10.04.2014" LASTVERSION_DRAFT="1" LEAVING_NEW="Main.AdminUser" Remark="" Revision="0" TASK="" TASK_DUE=""}%
+%META:WRKFLWCONTRIBUTORS{name="DRAFT" value="Main.AdminUser"}%
 %META:PREFERENCE{name="ALLOWTOPICCHANGE" title="ALLOWTOPICCHANGE" type="Set" value="AdminUser"}%
 %META:PREFERENCE{name="NOWYSIWYG" title="NOWYSIWYG" type="Set" value="1"}%
 %META:PREFERENCE{name="WORKFLOW" title="WORKFLOW" type="Set" value=""}%
-%META:WRKFLWCONTRIBUTORS{name="DRAFT" value="Main.AdminUser"}%
