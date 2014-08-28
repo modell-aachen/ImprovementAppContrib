@@ -108,6 +108,9 @@ msgstr "Umsetzung abschließen"
 msgid "Idea"
 msgstr "Idee"
 
+msgid "Ideas"
+msgstr "Ideen"
+
 msgid "Implemented"
 msgstr "Umgesetzt"
 
