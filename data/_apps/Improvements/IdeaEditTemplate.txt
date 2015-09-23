@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1406731441" format="1.1" reprev="2" version="2"}%
+%META:TOPICINFO{author="zs" comment="reprev" date="1442933355" format="1.1" reprev="2" version="61"}%
 %TMPL:INCLUDE{edit}%
 
 %TMPL:DEF{"content"}%%TMPL:P{"simpleheader"}%
@@ -6,72 +6,69 @@
 
 <div class="widgetBlockTitle">%MAKETEXT{"Idea"}%</div>
 <div class="widgetBlockContent">
-
-%TMPL:P{"IdeaDraft"}%
-
-<div style='display:%IF{"'%WIKINAME%' ingroup 'QMGroup' OR '%WIKINAME%' ingroup 'AdminGroup'" then="inline" else="none"}%;'>
-<div style='display:%IF{"'%GETWORKFLOWROW{state}%'='DRAFT'" then="none" else="inline"}%;'>
-%TMPL:P{"Controlling"}%
-</div>
-</div>
-
-<div style='display:%IF{"('%QUERY{"Responsible"}%'='%WIKINAME%' OR '%WIKINAME%' ingroup 'QMGroup' OR '%WIKINAME%' ingroup 'AdminGroup')" then="inline" else="none"}%;'>
-<div style='display:%IF{"'%GETWORKFLOWROW{state}%'='EFFECTIVENESSCHECKUP' OR '%GETWORKFLOWROW{state}%'='IMPLEMENTED'" then="inline" else="none"}%;'>
-%TMPL:P{"EffectivenessCheck"}%
-</div>
+<table class="metaDataHead">
+%IF{"'%QUERY{"Responsible"}%'='%WIKINAME%'" else=""}%
+<tr><td width="320px">%MAKETEXT{"Antragsteller"}%:</td><td>%RENDERFOREDIT{field="Creator" format="$edit" %IF{"'%QUERY{"Responsible"}%'='%WIKINAME%'" else="hidden=^Responsible$"}%}%</td></tr>
+%IF{"'%QUERY{"Responsible"}%'='%WIKINAME%'" else=""}%
+<tr><td width="320px">%MAKETEXT{"Idee"}%:<font color="red">* (Pflichtfeld)</font></td><td>%RENDERFOREDIT{field="TopicTitle" format="$edit"}%</td></tr>
+<tr><td>%MAKETEXT{"Beschreibung der Idee"}%:<font color="red">*</font></td><td>%RENDERFOREDIT{field="Summary" format="$edit"}%</td></tr>
+<tr><td>%MAKETEXT{"Profitierende Abteilung(en)"}%:</td><td>%RENDERFOREDIT{field="Department" format="$edit"}%</td></tr>
+<tr><td>%MAKETEXT{"Category"}%:</td><td>%RENDERFOREDIT{field="Category" format="$edit"}%</td></tr>
+<tr><td>%MAKETEXT{"Abteilungsleiter, des profitierenden Bereichs"}%:<font color="red">*</font></td><td>%RENDERFOREDIT{field="Responsible" format="$edit"}%</td></tr>
+</table>
 </div>
 
+%IF{"'%WORKFLOWSTATE%'='NEW' OR '%WORKFLOWSTATE%'='DRAFT' OR '%WORKFLOWSTATE%'='APPROVAL_BY_CONTROLLING'" then="<!--" else=""}%
+<div class="widgetBlockTitle">%MAKETEXT{"Bewertung durch Abteilungsleiter"}%</div>
+<div class="widgetBlockContent">
+<table class="metaDataHead">
+<tr><td width="320px">%MAKETEXT{"Kommentar durch Abteilungsleiter"}%:</td><td>%RENDERFOREDIT{field="CommentResponsible" format="$edit"}%</td></tr>
+<tr><td>%MAKETEXT{"Bewertung durch Abteilungsleiter"}%:<font color="red">*</font></td><td>%RENDERFOREDIT{field="RatingResponsible" format="$edit"}%</td></tr>
+<tr><td>%MAKETEXT{"Ca.-Kosten, um die Idee einzuführen"}%:</td><td>%RENDERFOREDIT{field="EstimatedCosts" format="$edit"}%</td></tr>
+<tr><td>%MAKETEXT{"Ca.-Einsparungen durch die Idee pro Jahr"}%:</td><td>%RENDERFOREDIT{field="EstimatedSavings" format="$edit"}%</td></tr>
+</table>
 </div>
+%IF{"'%WORKFLOWSTATE%'='NEW' OR '%WORKFLOWSTATE%'='DRAFT' OR '%WORKFLOWSTATE%'='APPROVAL_BY_CONTROLLING'" then="-->" else=""}%
+
+%IF{"'%WORKFLOWSTATE%'='NEW' OR '%WORKFLOWSTATE%'='DRAFT' OR '%WORKFLOWSTATE%'='APPROVAL_BY_CONTROLLING'" then="<div style=\"visibility:hidden;\">$percentRENDERFOREDIT{field=\"RatingResponsible\" format=\"$edit\"}$percent</div>"}%
+%IF{"'%WORKFLOWSTATE%'='NEW' OR '%WORKFLOWSTATE%'='DRAFT' OR '%WORKFLOWSTATE%'='APPROVAL_BY_THE_HEAD_OF_DEPARTMENT'" then="<div style=\"visibility:hidden;\">$percentRENDERFOREDIT{field=\"RatingCFO\" format=\"$edit\"}$percent</div>"}%
+
+%IF{"'%WORKFLOWSTATE%'='NEW' OR  '%WORKFLOWSTATE%'='DRAFT' OR '%WORKFLOWSTATE%'='APPROVAL_BY_THE_HEAD_OF_DEPARTMENT'" then="<!--" else=""}%
+<div class="widgetBlockTitle">%MAKETEXT{"Bewertung durch Controlling"}%</div>
+<div class="widgetBlockContent">
+<table class="metaDataHead">
+<tr><td width="320px">%MAKETEXT{"Kommentar durch Controlling"}%:</td><td>%RENDERFOREDIT{field="CommentCFO" format="$edit"}%</td></tr>
+<tr><td>%MAKETEXT{"Bewertung durch Controlling"}%:<font color="red">*</font></td><td>%RENDERFOREDIT{field="RatingCFO" format="$edit"}%</td></tr>
+</table>
+</div>
+%IF{"'%WORKFLOWSTATE%'='NEW' OR  '%WORKFLOWSTATE%'='DRAFT' OR '%WORKFLOWSTATE%'='APPROVAL_BY_THE_HEAD_OF_DEPARTMENT'" then="-->" else=""}%
+
+%RENDERFOREDIT{field="RatingFinal " hidden=".*" format="$edit"}%
+
+<script type="text/javascript">
+    function CalculateFields() {
+        var ratingResp = $("select[name='RatingResponsible'] option:selected").val() || 1;
+        var ratingC = $("select[name='RatingCFO'] option:selected").val() || 1;
+        level = parseInt(ratingResp) + parseInt(ratingC);
+        $("input[name='RatingFinal']").val(level);
+    }
+    $(document).ready(CalculateFields());
+    $("select[name='RatingResponsible']").change(CalculateFields);
+    $("select[name='RatingCFO']").change(CalculateFields);
+</script>
+
+
 %TMPL:P{"topicinfo"}%
 %TMPL:P{"formend"}%
 %TMPL:END%
 
-%TMPL:DEF{"IdeaDraft"}%
-<table class="metaDataHead">
-%IF{"'%URLPARAM{first}%'='first'" then="<!--" else=""}%
-<tr><td>%MAKETEXT{"Status"}%:</td><td><font color="%IF{"'%GETWORKFLOWROW{state}%'='DRAFT' OR '%GETWORKFLOWROW{state}%'='CHECKUP' OR '%GETWORKFLOWROW{state}%'='DISCARDED'" then="red" else="green"}%">
-%MAKETEXT{"%GETWORKFLOWROW{message}%"}% ( %MAKETEXT{"since"}% %WORKFLOWMETA{"LASTTIME_%GETWORKFLOWROW{state}%"}%)</font>
-%IF{"'%URLPARAM{first}%'='first'" then="-->" else=""}%
-</td></tr>
-<tr><td width="200px">%MAKETEXT{"Created on"}%:</td><td>%WORKFLOWMETA{"LASTTIME_DRAFT"}%</td></tr>
-<tr><td>%MAKETEXT{"Creator"}%:</td><td>%RENDERFORDISPLAY{field="Creator" format="$value"}%</td></tr>
-</table>
-%BR%
-<table class="metaDataHead">
-<tr><td width="200px">%MAKETEXT{"Short description"}%<font color="red">*</font>:</td><td>%RENDERFOREDIT{field="TopicTitle" format="$edit"}%</td></tr>
-<tr><td>%MAKETEXT{"Assigned process"}%:</td><td>%RENDERFOREDIT{field="Process" format="$edit"}%</td></tr>
-<tr><td>%MAKETEXT{"Room for improvement"}%:</td><td>%RENDERFOREDIT{field="RoomForImprovement" format="$edit"}%</td></tr>
-<tr><td>%MAKETEXT{"Approach"}%:</td><td>%RENDERFOREDIT{field="Approach" format="$edit"}%</td></tr>
-</table>
-%TMPL:END%
 
-%TMPL:DEF{"Controlling"}%
----++%MAKETEXT{"Controlling"}%
-<table class="metaDataHead">
-<tr><td width="200px">%MAKETEXT{"Assessment"}%:</td><td>%RENDERFOREDIT{field="Assessment" format="$edit"}%</td></tr>
-<tr><td>%MAKETEXT{"Responsible"}%:</td><td>%RENDERFOREDIT{field="Responsible" format="$edit"}%</td></tr>
-<tr><td>%MAKETEXT{"Decision"}%:</td><td>%RENDERFOREDIT{field="Decision" format="$edit"}%</td></tr>
-</table>
-%TMPL:END%
-
-%TMPL:DEF{"Measures"}%
----++%MAKETEXT{"Measures"}%
-<table class="metaDataHead">
-<tr><td width="200px">%MAKETEXT{"Description"}%:</td><td>%RENDERFOREDIT{field="Description" format="$edit"}%</td></tr>
-</table>
-%TMPL:END%
-
-%TMPL:DEF{"EffectivenessCheck"}%
----++%MAKETEXT{"Effectiveness checkup"}%
-<table class="metaDataHead">
-<tr><td width="200px">%MAKETEXT{"Effectiveness"}%:</td><td>%RENDERFOREDIT{field="Effectiveness" format="$edit"}%</td></tr>
-</table>
 %TMPL:END%
 
 %META:TOPICMOVED{by="BaseUserMapping_333" date="1397130338" from="Sandbox/Improvements.IdeenpoolEditTemplate" to="Sandbox/Improvements.QNotificationEditTemplate"}%
 %META:WORKFLOWHISTORY{value="<br>BROUILLON -- 06.01.2014"}%
 %META:WORKFLOW{name="BROUILLON" LASTPROCESSOR_BROUILLON="Main.AdminUser" LASTTIME_BROUILLON="06.01.2014" LASTVERSION_BROUILLON="1" LEAVING_NEU="Main.AdminUser" Remark="" Revision="0" TASK="" TASK_DUE=""}%
-%META:WRKFLWCONTRIBUTORS{name="BROUILLON" value="Main.AdminUser"}%
 %META:PREFERENCE{name="WORKFLOW" title="WORKFLOW" type="Local" value=""}%
 %META:PREFERENCE{name="NOWYSIWYG" title="NOWYSIWYG" type="Local" value="1"}%
 %META:PREFERENCE{name="ALLOWTOPICCHANGE" title="ALLOWTOPICCHANGE" type="Local" value="AdminUser"}%
+%META:WRKFLWCONTRIBUTORS{name="BROUILLON" value="Main.AdminUser"}%

@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1397132966" format="1.1" reprev="3" version="3"}%
+%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1442891107" format="1.1" reprev="3" version="77"}%
 %META:TOPICPARENT{name="WebHome"}%
 %IF{
 "istopic '%USERSWEB%.Default%TOPIC%'"
@@ -6,4 +6,7 @@ then="$percentINCLUDE{$quot%USERSWEB%.Default%TOPIC%$quot}$percent"
 else="$percentINCLUDE{$quot%SYSTEMWEB%.Default%TOPIC%$quot}$percent"
 }%
 | <!--statDate--> | <!--statViews--> | <!--statSaves--> | <!--statUploads--> | <!--statTopViews--> | <!--statTopContributors--> |
+| Sep 2015 |  1640 |  248 |  0 | 826 [[WebHome]]<br />&nbsp;88 [[Idea0019]]<br />&nbsp;87 [[Idea0012]]<br />&nbsp;69 [[Idea0013]]<br />&nbsp;63 [[Idea0011]]<br />&nbsp;42 [[Idea0015]]<br />&nbsp;38 [[Idea0009]]<br />&nbsp;37 [[IdeaEditTemplate]]<br />&nbsp;34 [[Idea0021]]<br />&nbsp;29 [[Idea0020]]<br />&nbsp;28 [[WebHomeViewTemplate]] | &nbsp;90 Main.UtaZuernstein<br />&nbsp;57 Main.AdminUser<br />&nbsp;30 Main.AndreasLanger<br />&nbsp;12 Main.FrankRichter<br />&nbsp;&nbsp;7 Main.AnjaMueller<br />&nbsp;&nbsp;6 Main.MariusSauter<br />&nbsp;&nbsp;5 Main.ThermoFit<br />&nbsp;&nbsp;5 Main.NadineWeiss<br />&nbsp;&nbsp;4 Main.JoergEsswein<br />&nbsp;&nbsp;4 Main.MirjamWiezorek<br />&nbsp;&nbsp;4 Main.MohammedAchmet |
+| Aug 2015 |  353 |  101 |  0 | 113 [[WebHome]]<br />&nbsp;41 [[IdeaViewTemplate]]<br />&nbsp;36 [[IdeaEditTemplate]]<br />&nbsp;33 [[Idea0005]]<br />&nbsp;26 [[WebTopicList]]<br />&nbsp;22 [[IdeaForm]]<br />&nbsp;16 [[Idea0007]]<br />&nbsp;15 [[Idea0009]]<br />&nbsp;14 [[IdeaWorkflow]]<br />&nbsp;&nbsp;9 [[Idea0010]]<br />&nbsp;&nbsp;8 [[Idea0008]] | &nbsp;84 Main.AdminUser<br />&nbsp;&nbsp;8 Main.AndreasLanger<br />&nbsp;&nbsp;4 Main.UtaZuernstein<br />&nbsp;&nbsp;3 Main.NadineMangold<br />&nbsp;&nbsp;2 Main.FrankRichter |
+| Jul 2015 |  160 |  35 |  0 | &nbsp;70 [[WebHome]]<br />&nbsp;19 [[WebTopicList]]<br />&nbsp;14 [[Idea0006]]<br />&nbsp;13 [[WebHomeViewTemplate]]<br />&nbsp;10 [[Idea0005]]<br />&nbsp;&nbsp;9 [[IdeaEditTemplate]]<br />&nbsp;&nbsp;8 [[IdeaWorkflow]]<br />&nbsp;&nbsp;7 [[IdeaForm]]<br />&nbsp;&nbsp;5 [[IdeaViewTemplate]]<br />&nbsp;&nbsp;5 [[WebPreferences]] | &nbsp;35 Main.UtaZuernstein |
 | Apr 2014 |  68 |  17 |  0 | &nbsp;16 [[WebHome]]<br />&nbsp;11 [[QMeldung002]]<br />&nbsp;&nbsp;9 [[WebTopicList]]<br />&nbsp;&nbsp;7 [[QNotificationViewTemplate]]<br />&nbsp;&nbsp;6 [[QNotificationWorkflow]]<br />&nbsp;&nbsp;6 [[QNotificationEditTemplate]]<br />&nbsp;&nbsp;4 [[QMeldung001]]<br />&nbsp;&nbsp;3 [[QNotificationForm]]<br />&nbsp;&nbsp;2 [[QNotificationTemplate]]<br />&nbsp;&nbsp;2 [[QMeldung000]]<br />&nbsp;&nbsp;1 [[WebCreateNewTopic]] | &nbsp;17 Main.AdminUser |

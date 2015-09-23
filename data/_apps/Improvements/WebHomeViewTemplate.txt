@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="BaseUserMapping_333" comment="save topic" date="1406732164" format="1.1" reprev="3" version="3"}%
+%META:TOPICINFO{author="BaseUserMapping_333" comment="save topic" date="1442832530" format="1.1" reprev="3" version="48"}%
 %TMPL:INCLUDE{view}%
 
 %TMPL:DEF{"content"}%%TMPL:P{"simpleheader"}%
@@ -6,26 +6,29 @@
 <div class="widgetBlockTitle">%MAKETEXT{"All ideas"}%</div>
 <div class="widgetBlockContent">
 %TABPANE{class="simple" select="%URLPARAM{"table"}%"}%
-%TAB{"%MAKETEXT{"New"}%" id="1"}%
+%TAB{"%MAKETEXT{"Neue Vorschläge"}%" id="1"}%
 %TMPL:P{"searchForIdeas" state="DRAFT"}%
 %ENDTAB% 
-%TAB{"%MAKETEXT{"To be approved"}%" id="2"}%
+%TAB{"%MAKETEXT{"Fachliche Prüfung"}%" id="2"}%
 %TABLE{%TABLETHEMEPARAM% dataalign="left"}% 
-%TMPL:P{"searchForIdeas" state="CHECKUP"}%
+%TMPL:P{"searchForIdeas" state="APPROVAL_BY_THE_HEAD_OF_DEPARTMENT"}%
 %ENDTAB%
-%TAB{"%MAKETEXT{"Approved"}%" id="3"}%
+%TAB{"%MAKETEXT{"Prüfung durch Controlling"}%" id="3"}%
 %TABLE{%TABLETHEMEPARAM% dataalign="left"}%
-%TMPL:P{"searchForIdeas" state="APPROVED"}% 
+%TMPL:P{"searchForIdeas" state="APPROVAL_BY_CONTROLLING"}% 
 %ENDTAB%  
-%TAB{"%MAKETEXT{"Effectiveness checkup"}%" id="4"}%
+%TAB{"%MAKETEXT{"Prüfung durch GF"}%" id="4"}%
 %TABLE{%TABLETHEMEPARAM% dataalign="left"}% 
-%TMPL:P{"searchForIdeas" state="EFFECTIVENESSCHECKUP"}% 
+%TMPL:P{"searchForIdeas" state="APPROVAL_BY_CEO"}% 
 %ENDTAB% 
-%TAB{"%MAKETEXT{"Implemented"}%" id="5"}%
+%TAB{"%MAKETEXT{"In Umsetzung"}%" id="5"}%
 %TABLE{%TABLETHEMEPARAM% dataalign="left"}% 
+%TMPL:P{"searchForIdeas" state="IMPLEMENTATION"}% 
+%ENDTAB%
+%TAB{"%MAKETEXT{"Umgesetzt"}%" id="6"}%
 %TMPL:P{"searchForIdeas" state="IMPLEMENTED"}% 
 %ENDTAB%
-%TAB{"%MAKETEXT{"Discarded"}%" id="6"}%
+%TAB{"%MAKETEXT{"Verworfen"}%" id="7"}%
 %TMPL:P{"searchForIdeas" state="DISCARDED"}% 
 %ENDTAB%
 %ENDTABPANE%
@@ -34,13 +37,13 @@
 
 %TMPL:DEF{"searchForIdeas"}%
 %TABLE{%TABLETHEMEPARAM% dataalign="left"}% 
-| *%MAKETEXT{"Short description"}%* | *%MAKETEXT{"Creator"}%* | *%MAKETEXT{"Responsible"}%* |
+| *%MAKETEXT{"Titel"}%* | *%MAKETEXT{"Beschreibung"}%* | *%MAKETEXT{"Department"}%* | *%MAKETEXT{"Kategorie"}%* | %IF{"'%state%' = 'IMPLEMENTATION' OR '%state%' = 'IMPLEMENTED' OR '%state%' = 'DISCARDED'" then="*%MAKETEXT{"Bewertung"}%* |"}%%IF{"'%state%' = 'DISCARDED'" then="*%MAKETEXT{"Begründung"}%* |"}%
 %SOLRSEARCH{
 "form:*IdeaForm process_state_s:%state%" 
 web="%WEB%" 
-fields="web, topic, field_TopicTitle_s, field_Summary_s, field_Creator_s, field_Responsible_lst"
+fields="web,topic,title,field_Summary_s,field_Department_lst,field_Category_lst,field_RatingFinal_s,workflowmeta_remark_s"
 header=""
-format="| <a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$topic\">$field_TopicTitle_s</a> | $field_Creator_s | $field_Responsible_lst | $n"
+format="| [[$web.$topic][$title]] | $field_Summary_s | $field_Department_lst | $field_Category_lst  | $percentIF{\"'%state%' = 'IMPLEMENTATION' OR '%state%' = 'IMPLEMENTED' OR '%state%' = 'DISCARDED'\" then=\"$field_RatingFinal_s |\"}$percent $percentIF{\"'%state%' = 'DISCARDED'\" then=\"$workflowmeta_remark_s |\"}$percent  $n"
 footer=""
 order="title" 
 rows="99999" 

@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="BaseUserMapping_333" comment="save topic" date="1406731392" format="1.1" reprev="3" version="2"}%
+%META:TOPICINFO{author="BaseUserMapping_333" comment="save topic" date="1406731392" format="1.1" reprev="3" version="1"}%
    * <a href='%SCRIPTURL{edit}%/%WEB%/IdeaAUTOINC0000?formtemplate=IdeaForm;templatetopic=%WEB%.IdeaTemplate;template=IdeaEdit;t=%GMTIME{$epoch}%;first=first'>%MAKETEXT{"Create new idea"}%</a>
 
 %META:WORKFLOWHISTORY{value="<br />DRAFT -- 10.04.2014"}%

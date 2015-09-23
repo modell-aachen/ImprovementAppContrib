@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1397130550" format="1.1" reprev="2" version="2"}%
+%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1397130550" format="1.1" reprev="2" version="1"}%
 %STARTSECTION{type="templateonly"}%
    * Set ALLOWTOPICCHANGE = AdminGroup
    * Set WORKFLOW =

@@ -1,97 +1,61 @@
-%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1406730786" format="1.1" reprev="2" version="2"}%
+%META:TOPICINFO{author="zs" comment="reprev" date="1441811782" format="1.1" reprev="2" version="33"}%
 %TMPL:INCLUDE{view}%
+
 
 %TMPL:DEF{"content"}%%TMPL:P{"simpleheader"}%
 
-<div class="widgetBlockTitle">%MAKETEXT{"Idea"}%</div>
+%JQREQUIRE{"ui::dialog, ui::button, textboxlist, blockui"}%
+%ADDTOZONE{"script" id="MODAC::EDIT::CALDISABLE" requires="JQUERYPLUGIN::LIVEQUERY" text="<script type=\"text/javascript\" src=\"%PUBURLPATH%/%SYSTEMWEB%/MinutesAppContrib/minutes.js\"></script>
+<style>@import url('%PUBURLPATH%/%SYSTEMWEB%/MinutesAppContrib/printbutton.css');</style>"}%
+%INCLUDE{"%SYSTEMWEB%/JSCalendarContribInline"}%
+
+<div style="display:none;">This should be unique text AIVOqxWgyT%ACTIONSEARCH{web="%WEB%" topic="DummyTopic"}%</div>
+
+<div class="widgetBlockTitle">%MAKETEXT{"Idea"}%&nbsp;<a href="%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%" title="%MAKETEXT{Edit}%">%ICON{pencil}%</a></div>
 <div class="widgetBlockContent">
-%TMPL:P{"IdeaDraft"}%
-
-<div style='display:%IF{"'%WIKINAME%' ingroup 'QMGroup' OR '%WIKINAME%' ingroup 'AdminGroup'" then="inline" else="none"}%;'>
-<div style='display:%IF{"'%GETWORKFLOWROW{state}%'!='DRAFT'" then="inline" else="none"}%;'>
-%TMPL:P{"Controlling"}%
-</div>
-</div>
-
-
-<div style='display:%IF{"'%QUERY{"Responsible"}%'='%WIKINAME%' OR '%WIKINAME%' ingroup 'QMGroup' OR '%WIKINAME%' ingroup 'AdminGroup'" then="block" else="none"}%;'>
-<div style='display:%IF{"'%GETWORKFLOWROW{state}%'='DRAFT' OR '%GETWORKFLOWROW{state}%'='CHECKUP'" then="none" else="block"}%;'>
-%TMPL:P{"Measures"}%
-</div>
-</div>
-
-<div style='display:%IF{"('%QUERY{"Responsible"}%'='%WIKINAME%' OR '%WIKINAME%' ingroup 'QMGroup' OR '%WIKINAME%' ingroup 'AdminGroup')" then="inline" else="none"}%;'>
-<div style='display:%IF{"'%GETWORKFLOWROW{state}%'='EFFECTIVENESSCHECKUP' OR '%GETWORKFLOWROW{state}%'='IMPLEMENTED'" then="inline" else="none"}%;'>
-%TMPL:P{"EffectivenessCheck"}%
-</div>
-</div>
-
-</div>
-%TMPL:END%
-
-
-%TMPL:DEF{"IdeaDraft"}%
-<table class="metaDataHead">
-<tr><td width="200px">%MAKETEXT{"Status"}%:</td><td><font color="%IF{"'%GETWORKFLOWROW{state}%'='DRAFT' OR '%GETWORKFLOWROW{state}%'='CHECKUP' OR '%GETWORKFLOWROW{state}%'='DISCARDED'" then="red" else="green"}%">%MAKETEXT{"%GETWORKFLOWROW{message}%"}% ( %MAKETEXT{"since"}% %WORKFLOWMETA{"LASTTIME_%GETWORKFLOWROW{state}%"}%)</font></td></tr>
-<tr><td>%MAKETEXT{"Created on"}%:</td><td>%WORKFLOWMETA{"LASTTIME_DRAFT"}%</td></tr>
-<tr><td>%MAKETEXT{"Creator"}%:</td><td>%RENDERFORDISPLAY{field="Creator" format="$value"}%</td></tr>
+<table class="metaDataHead">%IF{"'%QUERY{"Responsible"}%'='%WIKINAME%'" else="<!--"}%
+<tr><td width="320px">%MAKETEXT{"Antragsteller"}%:</td><td>%RENDERFORDISPLAY{field="Creator" format="$value"}%</td></tr>%IF{"'%QUERY{"Responsible"}%'='%WIKINAME%'" else="-->"}%
+<tr><td width="320px">%MAKETEXT{"Idee"}%:</td><td>%RENDERFORDISPLAY{field="TopicTitle" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Beschreibung der Idee"}%:</td><td>%RENDERFORDISPLAY{field="Summary" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Profitierende Abteilung(en)"}%:</td><td>%RENDERFORDISPLAY{field="Department" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Category"}%:</td><td>%RENDERFORDISPLAY{field="Category" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Abteilungsleiter, des profitierenden Bereichs"}%:</td><td>%RENDERFORDISPLAY{field="Responsible" format="$value"}%</td></tr>
 </table>
-%BR%
+</div>
+
+%IF{"'%WORKFLOWSTATE%'='DRAFT'" then="<!--" else=""}%
+<div class="widgetBlockTitle">%MAKETEXT{"Bewertung durch Abteilungsleiter"}%</div>
+<div class="widgetBlockContent">
 <table class="metaDataHead">
-<tr><td width="200px">%MAKETEXT{"Short description"}%:</td><td>%RENDERFORDISPLAY{field="TopicTitle" format="$value"}%</td></tr>
-<tr><td>%MAKETEXT{"Assigned process"}%:</td><td>%FORMAT{"%RENDERFORDISPLAY{field="Process" format="$value"}%" type="string" format="$item" header="[[" footer="]]"separator="]], [["}%</td></tr>
-<tr><td>%MAKETEXT{"Room for improvement"}%:</td><td>%RENDERFORDISPLAY{field="RoomForImprovement" format="$value"}%</td></tr>
-<tr><td>%MAKETEXT{"Approach"}%:</td><td>%RENDERFORDISPLAY{field="Approach" format="$value"}%</td></tr>
+<tr><td width="320px">%MAKETEXT{"Kommentar durch Abteilungsleiter"}%:</td><td>%RENDERFORDISPLAY{field="CommentResponsible" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Bewertung durch Abteilungsleiter"}%:</td><td>%RENDERFORDISPLAY{field="RatingResponsible" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Ca.-Kosten, um die Idee einzuführen"}%:</td><td>%RENDERFORDISPLAY{field="EstimatedCosts" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Ca.-Einsparungen durch die Idee pro Jahr"}%:</td><td>%RENDERFORDISPLAY{field="EstimatedSavings" format="$value"}%</td></tr>
 </table>
-%TMPL:END%
+</div>
+%IF{"'%WORKFLOWSTATE%'='DRAFT'" then="-->" else=""}%
 
-%TMPL:DEF{"Controlling"}%
----++%MAKETEXT{"Controlling"}%
+%IF{"'%WORKFLOWSTATE%'='DRAFT' OR '%WORKFLOWSTATE%'='APPROVAL_BY_THE_HEAD_OF_DEPARTMENT'" then="<!--" else=""}%
+<div class="widgetBlockTitle">%MAKETEXT{"Bewertung durch Controlling"}%</div>
+<div class="widgetBlockContent">
 <table class="metaDataHead">
-<tr><td width="200px">%MAKETEXT{"Assessment"}%:</td><td>%RENDERFORDISPLAY{field="Assessment" format="$value"}%</td></tr>
-<tr><td>%MAKETEXT{"Responsible"}%:</td><td>%RENDERFORDISPLAY{field="Responsible" format="$value"}%</td></tr>
-<tr><td>%MAKETEXT{"Decision"}%:</td><td>%RENDERFORDISPLAY{field="Decision" format="$value"}%</td></tr>
+<tr><td width="320px">%MAKETEXT{"Kommentar durch Controlling"}%:</td><td>%RENDERFORDISPLAY{field="CommentCFO" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Bewertung durch Controlling"}%:</td><td>%RENDERFORDISPLAY{field="RatingCFO" format="$value"}%</td></tr>
 </table>
-%TMPL:END%
+</div>
+%IF{"'%WORKFLOWSTATE%'='DRAFT' OR '%WORKFLOWSTATE%'='APPROVAL_BY_THE_HEAD_OF_DEPARTMENT'" then="-->" else=""}%
 
-%TMPL:DEF{"Measures"}%
----++%MAKETEXT{"Measures"}%
-<div class="modacPrintHide">
-%BUTTON{"%MAKETEXT{"Create new measure"}%" href="#actiondialog" class="jqUIDialogLink {cache:'false'}"}%
-%CLEAR%
-%STARTSECTION{"actiondialog"}%
-<div id="actiondialog" title="%MAKETEXT{"Create new measure"}%" class="jqUIDialog {draggable:true, resizable: true, height:400, width:600}">
-%COMMENT{type="action3"  location="This should be unique text AIVOqxWgyT"}%
-</div>
-%ENDSECTION{"actiondialog"}%
-</div>
-
-<div class="JQTabPrintSelected">
-%TABPANE{class="simple"}%
-%TAB{"%MAKETEXT{"Open measures"}%" id="tab1"}%
-<a href="%SCRIPTURL{"view"}%/%SYSTEMWEB%/MAPrinceModPrintDialog?skin=text&section=dialog&pweb=%ENCODE{"%INCLUDINGWEB%" type="url"}%&ptopic=%ENCODE{"%INCLUDINGTOPIC%" type="url"}%&landscape=%LANDSCAPE{default="0"}%&showtab=tab1&printParams=showtab" class="jqUIDialogLink">%ICON{"pdf"}%</a>
-<div id="SignalOpenMeasures">
-%ACTIONSEARCH{web="%WEB%" topic="%BASETOPIC%" state="open" sort="$createdate,$who,$due" jqsortable="1" jqsortopts="widgets: ['zebra'], sortList: [[0,1],[0,1]], headers: { 0: { sorter: 'qwikiDate' }, 6: { sorter: 'qwikiDate' }, 7: { sorter: 'qwikiDate' }, 8: { sorter: false }, 9: { sorter: false }, 10: { sorter: false } }"}%
-</div>
-%ENDTAB%
-%TAB{"%MAKETEXT{"Closed measures"}%" id="tab2"}%
-<a href="%SCRIPTURL{"view"}%/%SYSTEMWEB%/MAPrinceModPrintDialog?skin=text&section=dialog&pweb=%ENCODE{"%INCLUDINGWEB%" type="url"}%&ptopic=%ENCODE{"%INCLUDINGTOPIC%" type="url"}%&landscape=%LANDSCAPE{default="0"}%&showtab=tab2&printParams=showtab" class="jqUIDialogLink">%ICON{"pdf"}%</a>
-<div id="SignalClosedMeasures">
-%ACTIONSEARCH{web="%WEB%" topic="%BASETOPIC%" state="closed" sort="$createdate,$who,$due" jqsortable="1" jqsortopts="widgets: ['zebra'], sortList: [[0,1],[0,1]], headers: { 0: { sorter: 'qwikiDate' }, 6: { sorter: 'qwikiDate' }, 7: { sorter: 'qwikiDate' }, 8: { sorter: false }, 9: { sorter: false }, 10: { sorter: false } }"}%
-</div>
-%ENDTAB%
-</div>
-%AMPEL{"SignalOpenMeasures" WARN="%SIGNAL_PREWARNTIME{default="7"}%" DATE="$percntMAKETEXT{\"Due date\"}$percnt" DST="$percntMAKETEXT{\"Signal\"}$percnt" DONE="Status" COND="closed" LIVEQUERY="1"}%
-%AMPEL{"SignalClosedMeasures" WARN="%SIGNAL_PREWARNTIME{default="7"}%" DATE="$percntMAKETEXT{\"Due date\"}$percnt" DST="$percntMAKETEXT{\"Signal\"}$percnt" DONE="Status" COND="closed" LIVEQUERY="1"}%
-</div>
+%IF{"'%WORKFLOWSTATE%'='APPROVAL_BY_CEO' OR '%WORKFLOWSTATE%'='IMPLEMENTATION' OR '%WORKFLOWSTATE%'='IMPLEMENTED'" then="%TMPL:P{"showRatingFinal"}%"}%
 
 %TMPL:END%
 
-%TMPL:DEF{"EffectivenessCheck"}%
----++%MAKETEXT{"Effectiveness checkup"}%
-<table class="metaDataHead">
-<tr><td width="200px">%MAKETEXT{"Effectiveness"}%:</td><td>%RENDERFORDISPLAY{field="Effectiveness" format="$value"}%</td></tr>
+%TMPL:DEF{"showRatingFinal"}%
+<div class=\"widgetBlockTitle\">$percentMAKETEXT{\"Gesamtbewertung\"}$percent</div>
+<div class=\"widgetBlockContent\">
+<table class=\"metaDataHead\">
+<tr><td width=\"320px\">$percentMAKETEXT{\"Bewertung\"}$percent:</td><td>$percentRENDERFORDISPLAY{field=\"RatingFinal\" format=\"$value\"}$percent</td></tr>
 </table>
+</div>
 %TMPL:END%
 
 
@@ -104,17 +68,10 @@
 </div>
 %TMPL:END%
 
-
-
-
-
-
-
-
 %META:TOPICMOVED{by="BaseUserMapping_333" date="1397129216" from="Sandbox/Improvements.IdeenpoolViewTemplate" to="Sandbox/Improvements.QNotificationViewTemplate"}%
 %META:WORKFLOWHISTORY{value="<br>BROUILLON -- 06.01.2014"}%
 %META:WORKFLOW{name="BROUILLON" LASTPROCESSOR_BROUILLON="Main.AdminUser" LASTTIME_BROUILLON="06.01.2014" LASTVERSION_BROUILLON="1" LEAVING_NEU="Main.AdminUser" Remark="" Revision="0" TASK="" TASK_DUE=""}%
-%META:WRKFLWCONTRIBUTORS{name="BROUILLON" value="Main.AdminUser"}%
 %META:PREFERENCE{name="NOWYSIWYG" title="NOWYSIWYG" type="Local" value="1"}%
 %META:PREFERENCE{name="ALLOWTOPICCHANGE" title="ALLOWTOPICCHANGE" type="Local" value="AdminUser"}%
 %META:PREFERENCE{name="WORKFLOW" title="WORKFLOW" type="Set" value=""}%
+%META:WRKFLWCONTRIBUTORS{name="BROUILLON" value="Main.AdminUser"}%

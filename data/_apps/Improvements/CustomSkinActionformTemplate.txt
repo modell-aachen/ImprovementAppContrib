@@ -1,0 +1,16 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="" date="1440667718" format="1.1" version="2"}%
+<form method="post" action="%SCRIPTURLPATH{"%SUBMITCOMMAND%"}%/%WEB%/%TOPIC%%SUBMITCMDOPT%" type="POST" enctype="application/x-www-form-urlencoded">
+  %EDITFIELDS%
+  <textarea name="text" wrap="virtual" rows="%EBH%" cols="%EBW%" style="width:99%" class="foswikiTextarea foswikiEditboxStyleProportional">%TEXT%</textarea>
+  %HIDDENFIELDS%
+  <br />
+  <input type="submit" value="%MAKETEXT{"Save"}%" />
+</form>
+
+
+%META:WORKFLOWHISTORY{value="<br />DRAFT -- 27.08.2015"}%
+%META:WORKFLOW{name="DRAFT" LASTPROCESSOR_DRAFT="Main.AdminUser" LASTTIME_DRAFT="27.08.2015" LASTVERSION_DRAFT="1" LEAVING_NEW="Main.AdminUser" Remark="" Revision="0" TASK="" TASK_DUE=""}%
+%META:PREFERENCE{name="ALLOWTOPICCHANGE" title="ALLOWTOPICCHANGE" type="Set" value="AdminUser"}%
+%META:PREFERENCE{name="NOWYSIWYG" title="NOWYSIWYG" type="Set" value="1"}%
+%META:PREFERENCE{name="WORKFLOW" title="WORKFLOW" type="Set" value=""}%
+%META:WRKFLWCONTRIBUTORS{name="DRAFT" value="Main.AdminUser"}%

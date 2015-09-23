@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1402497407" format="1.1" reprev="3" version="3"}%
+%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1440754682" format="1.1" reprev="3" version="8"}%
 ---++ Defaults
 | *State type* | *Left tab* | *Right tab* | *Approved* |
 | approved | %MAKETEXT{"Idea"}% | | 1 |
@@ -8,13 +8,15 @@
 ---++ States
 %EDITTABLE{}%
 | *State* | *Allow Edit* | *Allow Move* | *Allow Comment* | *Message* | *State Type* |
-| NEW | LOGGEDIN | nobody | nobody | This idea is not under any workflow. | draft |
-| DRAFT | LOGGEDIN | nobody | nobody | This idea is a draft. | draft |
-| CHECKUP | QMGroup | nobody | nobody | This idea is waiting for approval by QM. | draft |
-| APPROVED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | nobody | nobody | This idea has been approved by QM. | approved |
-| EFFECTIVENESSCHECKUP | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | nobody | nobody | This idea is being checked up for effectiveness. | approved |
-| IMPLEMENTED | QMGroup, KeyUserGroup | nobody | nobody | This idea has been implemented successfully. | approved |
-| DISCARDED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | nobody | nobody | This idea has been discarded. | draft |
+| NEW | LOGGEDIN | nobody | LOGGEDIN | This idea is not under any workflow. | draft |
+| DRAFT | LOGGEDIN | nobody | LOGGEDIN | Diese Idee ist neu | draft |
+| APPROVAL_BY_THE_HEAD_OF_DEPARTMENT | %QUERY{"Responsible"}%,KeyUserGroup | nobody | LOGGEDIN | Diese Idee wird durch den fachlichen Leiter geprüft | draft |
+| APPROVAL_BY_CONTROLLING | ControllingGroup,KeyUserGroup | nobody | LOGGEDIN | Diese Idee wird durch das Controlling geprüft | draft |
+| APPROVAL_BY_CEO | CEOGroup,KeyUserGroup | nobody | LOGGEDIN | Diese Idee wird durch die Geschäftsführung geprüft | draft |
+| IMPLEMENTATION | %QUERY{"Responsible"}%,KeyUserGroup | nobody | LOGGEDIN | Diese Idee ist von der Geschäftsführung freigegeben worden. Bitte umsetzen. | draft |
+| IMPLEMENTED | %QUERY{"Responsible"}%,KeyUserGroup | nobody | LOGGEDIN | Diese Idee ist umgesetzt | draft |
+| DISCARDED | %QUERY{"Responsible"}%,KeyUserGroup | nobody | LOGGEDIN | Diese Idee wurde verworfen | draft |
+
 
 
  
@@ -23,15 +25,17 @@
 | *State* | *Action* | *Next State* | *Allowed* | *Notify* | *Condition* | *Warning* | *Attribute* |
 | NEW | Create | DRAFT | LOGGEDIN | | | | NEW |
 | NEW | Put under CIP | DRAFT | LOGGEDIN | | | | |
-| DRAFT | Request approval | CHECKUP | LOGGEDIN | | | | REMARK |
+| DRAFT | Fachlichen Verantwortlichen vorlegen  | APPROVAL_BY_THE_HEAD_OF_DEPARTMENT | LOGGEDIN | %QUERY{"Responsible"}% | | | REMARK |
 | DRAFT | Discard | DISCARDED | LOGGEDIN | | | | REMARK |
-| CHECKUP | Approve this idea for further process | APPROVED | QMGroup, Main.KeyUserGroup | | | | REMARK |
-| CHECKUP | Discard | DISCARDED | QMGroup, Main.KeyUserGroup | | | | REMARK |
-| APPROVED | Transfer to effectiveness checkup | EFFECTIVENESSCHECKUP | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | | | | REMARK |
-| APPROVED | Discard | DISCARDED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | | | | REMARK |
-| EFFECTIVENESSCHECKUP | Finish implementing | IMPLEMENTED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | | | | REMARK |
-| EFFECTIVENESSCHECKUP | Discard | DISCARDED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | | | | REMARK |
-| DISCARDED | Retransfer this idea to draft status | DRAFT | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | | | | REMARK |
+| APPROVAL_BY_THE_HEAD_OF_DEPARTMENT | Idee inhaltlich freigeben | APPROVAL_BY_CONTROLLING | %QUERY{"Responsible"}%,KeyUserGroup | ControllingGroup | | | REMARK |
+| APPROVAL_BY_THE_HEAD_OF_DEPARTMENT | Idee an einen anderen fachlichen Verantwortlichen übergeben | APPROVAL_BY_CONTROLLING | %QUERY{"Responsible"}%,KeyUserGroup | %QUERY{"Responsible"}% | | | REMARK |
+| APPROVAL_BY_THE_HEAD_OF_DEPARTMENT | Idee verwerfen | DISCARDED | %QUERY{"Responsible"}%,KeyUserGroup | %WORKFLOWMETA{"LASTPROCESSOR_DRAFT"}% | | | REMARK |
+| APPROVAL_BY_CONTROLLING  | Idee freigeben   | APPROVAL_BY_CEO | ControllingGroup,KeyUserGroup | CEOGroup | | | REMARK |
+| APPROVAL_BY_CONTROLLING  | Idee verwerfen   | DISCARDED | ControllingGroup,KeyUserGroup | %QUERY{"Responsible"}% | | | REMARK |
+| APPROVAL_BY_CEO | Idee freigeben   | IMPLEMENTATION  | CEOGroup,KeyUserGroup | %QUERY{"Responsible"}% | | | REMARK |
+| APPROVAL_BY_CEO | Idee verwerfen   | DISCARDED | CEOGroup,KeyUserGroup | %QUERY{"Responsible"}% | | | REMARK |
+| IMPLEMENTATION  | Umsetzung abschließen  | IMPLEMENTED | %QUERY{"Responsible"}%,KeyUserGroup | %WORKFLOWMETA{"LASTPROCESSOR_DRAFT"}% | | | REMARK |
+| DISCARDED  | Idee erneut öffnen  | DRAFT | %QUERY{"Responsible"}%,KeyUserGroup | | | | REMARK |
 
    * Set NOWYSIWYG=1
    * Set WORKFLOW=
