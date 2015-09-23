@@ -1,15 +1,16 @@
 %META:TOPICINFO{author="zs" comment="reprev" date="1442933355" format="1.1" reprev="2" version="61"}%
 %TMPL:INCLUDE{edit}%
 
+%TMPL:DEF{"setCreatorHidden"}%$percentRENDERFOREDIT{field=\"Creator\" format=\"$edit\" hidden=\"^Creator$\"}$percent%TMPL:END%
+
+%TMPL:DEF{"setCreatorVisible"}%<tr><td width=\"320px\">$percentMAKETEXT{\"Antragsteller\"}$percent:</td><td>$percentRENDERFOREDIT{field=\"Creator\" format=\"$edit\"}$percent</td></tr>%TMPL:END%
+
 %TMPL:DEF{"content"}%%TMPL:P{"simpleheader"}%
 %TMPL:P{"formstart"}%%TMPL:P{"formtop"}%
 
 <div class="widgetBlockTitle">%MAKETEXT{"Idea"}%</div>
-<div class="widgetBlockContent">
-<table class="metaDataHead">
-%IF{"'%QUERY{"Responsible"}%'='%WIKINAME%'" else=""}%
-<tr><td width="320px">%MAKETEXT{"Antragsteller"}%:</td><td>%RENDERFOREDIT{field="Creator" format="$edit" %IF{"'%QUERY{"Responsible"}%'='%WIKINAME%'" else="hidden=^Responsible$"}%}%</td></tr>
-%IF{"'%QUERY{"Responsible"}%'='%WIKINAME%'" else=""}%
+<div class="widgetBlockContent">%IF{"'%QUERY{"Responsible"}%'='%WIKINAME%'" else="%TMPL:P{"setCreatorHidden"}%"}%
+<table class="metaDataHead">%IF{"'%QUERY{"Responsible"}%'='%WIKINAME%'" then="%TMPL:P{"setCreatorVisible"}%"}%
 <tr><td width="320px">%MAKETEXT{"Idee"}%:<font color="red">* (Pflichtfeld)</font></td><td>%RENDERFOREDIT{field="TopicTitle" format="$edit"}%</td></tr>
 <tr><td>%MAKETEXT{"Beschreibung der Idee"}%:<font color="red">*</font></td><td>%RENDERFOREDIT{field="Summary" format="$edit"}%</td></tr>
 <tr><td>%MAKETEXT{"Profitierende Abteilung(en)"}%:</td><td>%RENDERFOREDIT{field="Department" format="$edit"}%</td></tr>
