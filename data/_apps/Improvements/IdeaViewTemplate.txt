@@ -13,8 +13,8 @@
 
 <div class="widgetBlockTitle">%MAKETEXT{"Idea"}%&nbsp;<a href="%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%" title="%MAKETEXT{Edit}%">%ICON{pencil}%</a></div>
 <div class="widgetBlockContent">
-<table class="metaDataHead">%IF{"'%QUERY{"Responsible"}%'='%WIKINAME%'" else="<!--"}%
-<tr><td width="320px">%MAKETEXT{"Antragsteller"}%:</td><td>%RENDERFORDISPLAY{field="Creator" format="$value"}%</td></tr>%IF{"'%QUERY{"Responsible"}%'='%WIKINAME%'" else="-->"}%
+<table class="metaDataHead">
+<tr><td width="320px">%MAKETEXT{"Antragsteller"}%:</td><td>%RENDERFORDISPLAY{field="Creator" format="$value"}%</td></tr>
 <tr><td width="320px">%MAKETEXT{"Idee"}%:</td><td>%RENDERFORDISPLAY{field="TopicTitle" format="$value"}%</td></tr>
 <tr><td>%MAKETEXT{"Beschreibung der Idee"}%:</td><td>%RENDERFORDISPLAY{field="Summary" format="$value"}%</td></tr>
 <tr><td>%MAKETEXT{"Profitierende Abteilung(en)"}%:</td><td>%RENDERFORDISPLAY{field="Department" format="$value"}%</td></tr>
