@@ -20,12 +20,6 @@
 </div>
 </div>
 
-<div style='display:%IF{"('%QUERY{"Responsible"}%'='%WIKINAME%' OR '%WIKINAME%' ingroup 'QMGroup' OR '%WIKINAME%' ingroup 'AdminGroup')" then="inline" else="none"}%;'>
-<div style='display:%IF{"'%GETWORKFLOWROW{state}%'='EFFECTIVENESSCHECKUP' OR '%GETWORKFLOWROW{state}%'='IMPLEMENTED'" then="inline" else="none"}%;'>
-%TMPL:P{"EffectivenessCheck"}%
-</div>
-</div>
-
 </div>
 %TMPL:END%
 
@@ -35,22 +29,23 @@
 <tr><td width="200px">%MAKETEXT{"Status"}%:</td><td><font color="%IF{"'%GETWORKFLOWROW{state}%'='DRAFT' OR '%GETWORKFLOWROW{state}%'='CHECKUP' OR '%GETWORKFLOWROW{state}%'='DISCARDED'" then="red" else="green"}%">%MAKETEXT{"%GETWORKFLOWROW{message}%"}% ( %MAKETEXT{"since"}% %WORKFLOWMETA{"LASTTIME_%GETWORKFLOWROW{state}%"}%)</font></td></tr>
 <tr><td>%MAKETEXT{"Created on"}%:</td><td>%WORKFLOWMETA{"LASTTIME_DRAFT"}%</td></tr>
 <tr><td>%MAKETEXT{"Creator"}%:</td><td>%RENDERFORDISPLAY{field="Creator" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Responsible"}%:</td><td>%RENDERFORDISPLAY{field="Responsible" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Factory"}%:</td><td>%RENDERFORDISPLAY{field="Factory" format="$value"}%</td></tr>
 </table>
 %BR%
 <table class="metaDataHead">
-<tr><td width="200px">%MAKETEXT{"Short description"}%:</td><td>%RENDERFORDISPLAY{field="TopicTitle" format="$value"}%</td></tr>
-<tr><td>%MAKETEXT{"Assigned process"}%:</td><td>%FORMAT{"%RENDERFORDISPLAY{field="Process" format="$value"}%" type="string" format="$item" header="[[" footer="]]"separator="]], [["}%</td></tr>
-<tr><td>%MAKETEXT{"Room for improvement"}%:</td><td>%RENDERFORDISPLAY{field="RoomForImprovement" format="$value"}%</td></tr>
-<tr><td>%MAKETEXT{"Approach"}%:</td><td>%RENDERFORDISPLAY{field="Approach" format="$value"}%</td></tr>
+<tr><td width="200px">%MAKETEXT{"Title"}%:</td><td>%RENDERFORDISPLAY{field="TopicTitle" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Title EN"}%:</td><td>%RENDERFORDISPLAY{field="TitleEN" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Idea"}%:</td><td>%RENDERFORDISPLAY{field="Idea" format="$value"}%</td></tr>
 </table>
 %TMPL:END%
 
 %TMPL:DEF{"Controlling"}%
 ---++%MAKETEXT{"Controlling"}%
 <table class="metaDataHead">
-<tr><td width="200px">%MAKETEXT{"Assessment"}%:</td><td>%RENDERFORDISPLAY{field="Assessment" format="$value"}%</td></tr>
-<tr><td>%MAKETEXT{"Responsible"}%:</td><td>%RENDERFORDISPLAY{field="Responsible" format="$value"}%</td></tr>
-<tr><td>%MAKETEXT{"Decision"}%:</td><td>%RENDERFORDISPLAY{field="Decision" format="$value"}%</td></tr>
+<tr><td width="200px">%MAKETEXT{"Department"}%:</td><td>%RENDERFORDISPLAY{field="Department" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Priority"}%:</td><td>%RENDERFORDISPLAY{field="Priority" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Best idee"}%:</td><td>%RENDERFORDISPLAY{field="BestIdee" format="$value"}%</td></tr>
 </table>
 %TMPL:END%
 
@@ -87,14 +82,6 @@
 
 %TMPL:END%
 
-%TMPL:DEF{"EffectivenessCheck"}%
----++%MAKETEXT{"Effectiveness checkup"}%
-<table class="metaDataHead">
-<tr><td width="200px">%MAKETEXT{"Effectiveness"}%:</td><td>%RENDERFORDISPLAY{field="Effectiveness" format="$value"}%</td></tr>
-</table>
-%TMPL:END%
-
-
 %TMPL:DEF{"kvptransitions"}%
 <div class="modacKVPtable">
 | *%MAKETEXT{"Idea workflow"}%* ||
@@ -107,14 +94,11 @@
 
 
 
-
-
-
-
 %META:TOPICMOVED{by="BaseUserMapping_333" date="1397129216" from="Sandbox/Improvements.IdeenpoolViewTemplate" to="Sandbox/Improvements.QNotificationViewTemplate"}%
-%META:WORKFLOWHISTORY{value="<br>BROUILLON -- 06.01.2014"}%
-%META:WORKFLOW{name="BROUILLON" LASTPROCESSOR_BROUILLON="Main.AdminUser" LASTTIME_BROUILLON="06.01.2014" LASTVERSION_BROUILLON="1" LEAVING_NEU="Main.AdminUser" Remark="" Revision="0" TASK="" TASK_DUE=""}%
-%META:WRKFLWCONTRIBUTORS{name="BROUILLON" value="Main.AdminUser"}%
 %META:PREFERENCE{name="NOWYSIWYG" title="NOWYSIWYG" type="Local" value="1"}%
 %META:PREFERENCE{name="ALLOWTOPICCHANGE" title="ALLOWTOPICCHANGE" type="Local" value="AdminUser"}%
 %META:PREFERENCE{name="WORKFLOW" title="WORKFLOW" type="Set" value=""}%
+%META:WORKFLOWHISTORY{value="<br>BROUILLON -- 06.01.2014"}%
+%META:WRKFLWCONTRIBUTORS{name="BROUILLON" value="Main.AdminUser"}%
+%META:WORKFLOW{name="BROUILLON" LASTPROCESSOR_BROUILLON="Main.AdminUser" LASTTIME_BROUILLON="06.01.2014" LASTVERSION_BROUILLON="1" LEAVING_NEU="Main.AdminUser" Remark="" Revision="0" TASK="" TASK_DUE=""}%
+

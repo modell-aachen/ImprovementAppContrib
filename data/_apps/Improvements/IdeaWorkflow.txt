@@ -10,28 +10,31 @@
 | *State* | *Allow Edit* | *Allow Move* | *Allow Comment* | *Message* | *State Type* |
 | NEW | LOGGEDIN | nobody | nobody | This idea is not under any workflow. | draft |
 | DRAFT | LOGGEDIN | nobody | nobody | This idea is a draft. | draft |
-| CHECKUP | QMGroup | nobody | nobody | This idea is waiting for approval by QM. | draft |
-| APPROVED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | nobody | nobody | This idea has been approved by QM. | approved |
-| EFFECTIVENESSCHECKUP | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | nobody | nobody | This idea is being checked up for effectiveness. | approved |
+| CHECKUP | QMGroup | nobody | nobody | This idea is waiting for approval. | draft |
+| APPROVED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | nobody | nobody | This idea has been approved. | approved |
+| LATER | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | nobody | nobody | This idea is stored for later. | approved |
+| PROCESSED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | nobody | nobody | This idea is in work.| approved |
 | IMPLEMENTED | QMGroup, KeyUserGroup | nobody | nobody | This idea has been implemented successfully. | approved |
 | DISCARDED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | nobody | nobody | This idea has been discarded. | draft |
 
 
  
----++ Transitions
-%EDITTABLE{}%
-| *State* | *Action* | *Next State* | *Allowed* | *Notify* | *Condition* | *Warning* | *Attribute* |
-| NEW | Create | DRAFT | LOGGEDIN | | | | NEW |
-| NEW | Put under CIP | DRAFT | LOGGEDIN | | | | |
-| DRAFT | Request approval | CHECKUP | LOGGEDIN | | | | REMARK |
-| DRAFT | Discard | DISCARDED | LOGGEDIN | | | | REMARK |
-| CHECKUP | Approve this idea for further process | APPROVED | QMGroup, Main.KeyUserGroup | | | | REMARK |
-| CHECKUP | Discard | DISCARDED | QMGroup, Main.KeyUserGroup | | | | REMARK |
-| APPROVED | Transfer to effectiveness checkup | EFFECTIVENESSCHECKUP | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | | | | REMARK |
-| APPROVED | Discard | DISCARDED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | | | | REMARK |
-| EFFECTIVENESSCHECKUP | Finish implementing | IMPLEMENTED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | | | | REMARK |
-| EFFECTIVENESSCHECKUP | Discard | DISCARDED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | | | | REMARK |
-| DISCARDED | Retransfer this idea to draft status | DRAFT | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | | | | REMARK |
+ ---++ Transitions
+ %EDITTABLE{}%
+ | *State* | *Action* | *Next State* | *Allowed* | *Notify* | *Condition* | *Warning* | *Attribute* |
+ | NEW | Create | DRAFT | LOGGEDIN | | | | NEW |
+ | NEW | Put under CIP | DRAFT | LOGGEDIN | | | | |
+ | DRAFT | Request approval | CHECKUP | LOGGEDIN | | | | REMARK |
+ | DRAFT | Discard | DISCARDED | LOGGEDIN | | | | REMARK |
+ | CHECKUP | Approve this idea for further process | APPROVED | QMGroup, Main.KeyUserGroup | | | | REMARK |
+ | CHECKUP | Approve this idea for later process | LATER | QMGroup, Main.KeyUserGroup | | | | REMARK |
+ | CHECKUP | Discard | DISCARDED | QMGroup, Main.KeyUserGroup | | | | REMARK |
+ | APPROVED | Transfer to in work | PROCESSED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | | | | REMARK |
+ | APPROVED | Discard | DISCARDED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | | | | REMARK |
+ | LATER | Transfer to in work | PROCESSED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | | | | REMARK |
+ | PROCESSED | Finish implementing | IMPLEMENTED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | | | | REMARK |
+ | PROCESSED | Discard | DISCARDED | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | | | | REMARK |
+ | DISCARDED | Retransfer this idea to draft status | DRAFT | %META{"formfield" name="Responsible"}%, QMGroup, KeyUserGroup | | | | REMARK |
 
    * Set NOWYSIWYG=1
    * Set WORKFLOW=
@@ -39,3 +42,4 @@
    * Set ALLOWTOPICCHANGE = AdminGroup
 
 %META:TOPICMOVED{by="BaseUserMapping_333" date="1397132966" from="Sandbox/Improvements.DocumentApprovalWorkflow" to="Sandbox/Improvements.QNotificationWorkflow"}%
+

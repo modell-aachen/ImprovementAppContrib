@@ -201,6 +201,9 @@ msgstr "Verbesserungsvorschlag"
 msgid "This idea has been approved by QM."
 msgstr "Diese Idee ist durch die QM freigegeben worden."
 
+msgid "This idea has been approved."
+msgstr "Diese Idee ist freigegeben worden."
+
 msgid "This idea has been discarded."
 msgstr "Diese Idee wurde verworfen."
 
@@ -219,14 +222,17 @@ msgstr "Diese Idee unterliegt keinem Workflow."
 msgid "This idea is waiting for approval by QM."
 msgstr "Diese Idee wartet auf eine Freigabe durch die QM."
 
+msgid "This idea is waiting for approval."
+msgstr "Diese Idee wartet auf eine Freigabe."
+
 msgid "Title"
 msgstr "Titel"
 
 msgid "To be approved"
 msgstr "In Prüfung"
 
-msgid "To be filled out by QM"
-msgstr "Auszufüllen durch QM"
+msgid "To be filled out"
+msgstr "Auszufüllen"
 
 msgid "To be filled out by Responsible"
 msgstr "Auszufüllen durch Verantwortlichen"
@@ -239,3 +245,24 @@ msgstr "Typ"
 
 msgid "yes"
 msgstr "ja"
+
+msgid "Later"
+msgstr "Später"
+
+msgid "In work"
+msgstr "In Bearbeitung"
+
+msgid "Factory"
+msgstr "Werk"
+
+msgid "Priority"
+msgstr "Priorität"
+
+msgid "Best idee"
+msgstr "Beste Idee"
+
+msgid "Title EN"
+msgstr "Titel EN"
+
+msgid "Approve this idea for later process"
+msgstr "Idee für spätere Bearbeitung freigeben"
