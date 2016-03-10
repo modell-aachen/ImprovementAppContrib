@@ -13,28 +13,28 @@
 
    * Set WORKFLOW = IdeaWorkflow
 
----++ Appearance
+   ---++ Appearance
 
    * Set WEBBGCOLOR = #efefef
-      * <sticky>web-specific background color, <span style='background-color: %WEBBGCOLOR%'> current color </span></sticky>
-
+   * <sticky>web-specific background color, <span style='background-color: %WEBBGCOLOR%'> current color </span></sticky>
+   
    * Set SITEMAPLIST = on
-      * set to =off= to hide this web from the [[%SYSTEMWEB%.SiteMap][SiteMap]]
-
+   * set to =off= to hide this web from the [[%SYSTEMWEB%.SiteMap][SiteMap]]
+   
    * Set WEBSUMMARY =
-      * description what this web is used for
-
+   * description what this web is used for
+   
    * Set NOSEARCHALL =
-      * if set to =on=, this web will be exclude web from a global search
+   * if set to =on=, this web will be exclude web from a global search
 
 ---++ Wiki application settings
 
    * WebTopicEditTemplate
-      * default template for new topics in this web, if this topic does not exist,  [[%SYSTEMWEB%.WebTopicEditTemplate][site-level default template]] will be used
-
+   * default template for new topics in this web, if this topic does not exist,  [[%SYSTEMWEB%.WebTopicEditTemplate][site-level default template]] will be used
+   
    * Set WEBFORMS =
-      * Comma separated list of forms that can be attached to topics in this web. See [[%SYSTEMWEB%.DataForms][DataForms]] for more information.
-
+   * Comma separated list of forms that can be attached to topics in this web. See [[%SYSTEMWEB%.DataForms][DataForms]] for more information.
+   
    * Set NO_MODAC_HEAD = 1
 
 ---++ ActionTracker settings
@@ -68,3 +68,4 @@ Users or groups allowed to change or rename this <nop>%TOPIC% topic: (e.g., [[%U
 
 
 %META:PREFERENCE{name="NOWYSIWYG" title="NOWYSIWYG" type="Local" value="1"}%
+

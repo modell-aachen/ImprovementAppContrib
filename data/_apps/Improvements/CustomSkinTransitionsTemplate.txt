@@ -12,3 +12,4 @@
 %META:PREFERENCE{name="NOWYSIWYG" title="NOWYSIWYG" type="Set" value="1"}%
 %META:PREFERENCE{name="WORKFLOW" title="WORKFLOW" type="Set" value=""}%
 %META:WRKFLWCONTRIBUTORS{name="DRAFT" value="Main.AdminUser"}%
+

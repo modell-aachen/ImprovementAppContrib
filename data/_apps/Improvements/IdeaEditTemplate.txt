@@ -9,15 +9,9 @@
 
 %TMPL:P{"IdeaDraft"}%
 
-<div style='display:%IF{"'%WIKINAME%' ingroup 'QMGroup' OR '%WIKINAME%' ingroup 'AdminGroup'" then="inline" else="none"}%;'>
+<div style='display:%IF{"'%WIKINAME%' ingroup 'QMGroup' OR '%WIKINAME%' ingroup 'AdminGroup' OR '%WIKINAME%' ingroup 'KeyUserGroup'" then="inline" else="none"}%;'>
 <div style='display:%IF{"'%GETWORKFLOWROW{state}%'='DRAFT'" then="none" else="inline"}%;'>
 %TMPL:P{"Controlling"}%
-</div>
-</div>
-
-<div style='display:%IF{"('%QUERY{"Responsible"}%'='%WIKINAME%' OR '%WIKINAME%' ingroup 'QMGroup' OR '%WIKINAME%' ingroup 'AdminGroup')" then="inline" else="none"}%;'>
-<div style='display:%IF{"'%GETWORKFLOWROW{state}%'='EFFECTIVENESSCHECKUP' OR '%GETWORKFLOWROW{state}%'='IMPLEMENTED'" then="inline" else="none"}%;'>
-%TMPL:P{"EffectivenessCheck"}%
 </div>
 </div>
 
@@ -35,22 +29,23 @@
 </td></tr>
 <tr><td width="200px">%MAKETEXT{"Created on"}%:</td><td>%WORKFLOWMETA{"LASTTIME_DRAFT"}%</td></tr>
 <tr><td>%MAKETEXT{"Creator"}%:</td><td>%RENDERFORDISPLAY{field="Creator" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Factory"}%:</td><td>%RENDERFOREDIT{field="Factory" format="$edit"}%</td></tr>
+<tr><td>%MAKETEXT{"Responsible"}%:</td><td>%RENDERFOREDIT{field="Responsible" format="$edit"}%</td></tr>
 </table>
 %BR%
 <table class="metaDataHead">
-<tr><td width="200px">%MAKETEXT{"Short description"}%<font color="red">*</font>:</td><td>%RENDERFOREDIT{field="TopicTitle" format="$edit"}%</td></tr>
-<tr><td>%MAKETEXT{"Assigned process"}%:</td><td>%RENDERFOREDIT{field="Process" format="$edit"}%</td></tr>
-<tr><td>%MAKETEXT{"Room for improvement"}%:</td><td>%RENDERFOREDIT{field="RoomForImprovement" format="$edit"}%</td></tr>
-<tr><td>%MAKETEXT{"Approach"}%:</td><td>%RENDERFOREDIT{field="Approach" format="$edit"}%</td></tr>
+<tr><td>%MAKETEXT{"Title"}%:</td><td>%RENDERFOREDIT{field="TopicTitle" format="$edit"}%</td></tr>
+<tr><td>%MAKETEXT{"Title EN"}%:</td><td>%RENDERFOREDIT{field="TitleEN" format="$edit"}%  %MAKETEXT{"Not mandatory, you can ask your supervisor."}%</td></tr>
+<tr><td>%MAKETEXT{"Idea"}%:</td><td>%RENDERFOREDIT{field="Idea" format="$edit"}%</td></tr>
 </table>
 %TMPL:END%
 
 %TMPL:DEF{"Controlling"}%
 ---++%MAKETEXT{"Controlling"}%
 <table class="metaDataHead">
-<tr><td width="200px">%MAKETEXT{"Assessment"}%:</td><td>%RENDERFOREDIT{field="Assessment" format="$edit"}%</td></tr>
-<tr><td>%MAKETEXT{"Responsible"}%:</td><td>%RENDERFOREDIT{field="Responsible" format="$edit"}%</td></tr>
-<tr><td>%MAKETEXT{"Decision"}%:</td><td>%RENDERFOREDIT{field="Decision" format="$edit"}%</td></tr>
+<tr><td width="200px">%MAKETEXT{"Department"}%:</td><td>%RENDERFOREDIT{field="Department" format="$edit"}%</td></tr>
+<tr><td>%MAKETEXT{"Priority"}%:</td><td>%RENDERFOREDIT{field="Priority" format="$edit"}%</td></tr>
+<tr><td>%MAKETEXT{"Best idea"}%:</td><td>%RENDERFOREDIT{field="BestIdea" format="$edit"}%</td></tr>
 </table>
 %TMPL:END%
 
@@ -61,12 +56,6 @@
 </table>
 %TMPL:END%
 
-%TMPL:DEF{"EffectivenessCheck"}%
----++%MAKETEXT{"Effectiveness checkup"}%
-<table class="metaDataHead">
-<tr><td width="200px">%MAKETEXT{"Effectiveness"}%:</td><td>%RENDERFOREDIT{field="Effectiveness" format="$edit"}%</td></tr>
-</table>
-%TMPL:END%
 
 %META:TOPICMOVED{by="BaseUserMapping_333" date="1397130338" from="Sandbox/Improvements.IdeenpoolEditTemplate" to="Sandbox/Improvements.QNotificationEditTemplate"}%
 %META:WORKFLOWHISTORY{value="<br>BROUILLON -- 06.01.2014"}%

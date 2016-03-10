@@ -1,5 +1,4 @@
-%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1397130550" format="1.1" reprev="2" version="2"}%
-%STARTSECTION{type="templateonly"}%
+TARTSECTION{type="templateonly"}%
    * Set ALLOWTOPICCHANGE = AdminGroup
    * Set WORKFLOW =
    * Set DISPLAYCOMMENTS = off
@@ -9,3 +8,4 @@
 %META:PREFERENCE{name="VIEW_TEMPLATE" title="VIEW_TEMPLATE" type="Set" value="IdeaView"}%
 %META:PREFERENCE{name="EDIT_TEMPLATE" title="EDIT_TEMPLATE" type="Set" value="IdeaEdit"}%
 %META:PREFERENCE{name="DISPLAYCOMMENTS" title="DISPLAYCOMMENTS" type="Set" value="on"}%
+

@@ -1,16 +1,15 @@
-%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1403263818" format="1.1" reprev="5" version="6"}%
+%META:TOPICINFO{author="BaseUserMapping_333" comment="pending" date="1452868270" format="1.1" version="6"}%
+%META:TOPICINFO{author="supplieth" comment="reprev" date="1448629775" format="1.1" reprev="5" version="1"}%
 | *Name* | *Type* | *Size* | *Values* | *Tooltip message* | *Attributes* |
-| TopicTitle | text | 48 | | | M |
+| TopicTitle | text | 48 | | %MAKETEXT{"Title in local language"}% | M |
 | Creator | text | 50 | %WIKINAME% | %MAKETEXT{"Creator"}% | |
-| Summary | text | 50 | | %MAKETEXT{"Short summary of idea"}% | |
-| Process | textboxlist | 50 mustMatch limit="1" | %SCRIPTURL{"view"}%/%WEB%/IdeaForm?section=process;skin=text;limit=20 | %MAKETEXT{"Process"}% | |
-| RoomForImprovement | text | 50 | | %MAKETEXT{"Room for improvement"}% | |
-| Approach | textarea | 48x3 | | %MAKETEXT{"Approach"}% | |
-| Assessment | textarea | 48x3 | | %MAKETEXT{"Assessment"}% | |
 | Responsible | textboxlist | 50 mustMatch limit="1" | %USERAUTOCOMPLETE% | %MAKETEXT{"Responsible"}% | |
-| Decision | select+values | 1 | ,%MAKETEXT{"yes"}%=yes,%MAKETEXT{"no"}%=no,%MAKETEXT{"later"}%=later | %MAKETEXT{"Decision"}% | |
-| Description | textarea | 48x3 | | %MAKETEXT{"Description"}% | |
-| Effectiveness | select+values | 1 | %MAKETEXT{"no effective"}%=no effective, %MAKETEXT{"effective"}%=effective | %MAKETEXT{"Effectiveness"}% | |
+| Factory | text | 50 | | %MAKETEXT{"Factory"}% | |
+| TitleEN | text | 50 | | %MAKETEXT{"Title in english"}% | |
+| Idea | textarea | 48x3 | | %MAKETEXT{"Idea"}% | |
+| Department | select+values | 1 |%MAKETEXT{"Department 1"}%=dep1, %MAKETEXT{"Department 2"}%=dep2, %MAKETEXT{"Department 3"}%=dep3 | %MAKETEXT{"Department"}% | |
+| Priority | select+values | 1 | %MAKETEXT{"now"}%=now, %MAKETEXT{"in 6 months"}%=6months, %MAKETEXT{"in 1 year"}%=1year | %MAKETEXT{"Priority"}% | |
+| BestIdea | checkbox+values | 50 | %MAKETEXT{"Best idea"}%=BestIdea | %MAKETEXT{"Best Idea"}% | |
 
 <verbatim>
 %STARTSECTION{"process"}%[%SOLRSEARCH{
@@ -18,11 +17,12 @@
 }%]%ENDSECTION{"process"}%
 </verbatim>
 
+
 %META:TOPICMOVED{by="BaseUserMapping_333" date="1397129166" from="Sandbox/Improvements.DocumentForm" to="Sandbox/Improvements.QNotificationForm"}%
 %META:WORKFLOWHISTORY{value="<br>BROUILLON -- 06.01.2014"}%
 %META:WORKFLOW{name="BROUILLON" LASTPROCESSOR_BROUILLON="Main.AdminUser" LASTTIME_BROUILLON="06.01.2014" LASTVERSION_BROUILLON="1" LEAVING_NEU="Main.AdminUser" Remark="" Revision="0" TASK="" TASK_DUE=""}%
+%META:WRKFLWCONTRIBUTORS{name="BROUILLON" value="Main.AdminUser"}%
 %META:PREFERENCE{name="DISPLAYCOMMENTS" title="DISPLAYCOMMENTS" type="Set" value="off"}%
 %META:PREFERENCE{name="ALLOWTOPICCHANGE" title="ALLOWTOPICCHANGE" type="Set" value="AdminGroup"}%
 %META:PREFERENCE{name="NOWYSIWYG" title="NOWYSIWYG" type="Set" value="1"}%
 %META:PREFERENCE{name="WORKFLOW" title="WORKFLOW" type="Set" value=""}%
-%META:WRKFLWCONTRIBUTORS{name="BROUILLON" value="Main.AdminUser"}%
