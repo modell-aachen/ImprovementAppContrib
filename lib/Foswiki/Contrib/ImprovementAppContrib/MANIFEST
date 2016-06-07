@@ -24,4 +24,5 @@ data/_apps/Improvements/WebTopicList.txt 0644
 data/System/ImprovementAppContrib.txt 0644
 lib/Foswiki/Contrib/ImprovementAppContrib.pm 0644
 locale/ImprovementAppContrib/de.po 0644
+locale/ImprovementAppContrib/es.po 0644
 locale/ImprovementAppContrib/fr.po 0644

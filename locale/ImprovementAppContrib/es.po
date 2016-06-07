@@ -1,0 +1,174 @@
+msgid "Add task"
+msgstr "Añadir tarea"
+
+msgid "All"
+msgstr "todo"
+
+msgid "All Ideas"
+msgstr "todas las ideas"
+
+msgid "All ideas"
+msgstr "todas las ideas"
+
+msgid "All measures"
+msgstr "todas las medidas"
+
+msgid "Approved"
+msgstr "Aprovado"
+
+msgid "Best idea"
+msgstr "Mejor idea"
+
+msgid "Closed measures"
+msgstr "Medidas cerradas"
+
+msgid "Closed on"
+msgstr "cerrado"
+
+msgid "Controlling"
+msgstr "Controlando"
+
+msgid "Create date"
+msgstr "Crear fecha"
+
+msgid "Create new idea"
+msgstr "crear nueva idea"
+
+msgid "Create new measure"
+msgstr "crear nueva medida"
+
+msgid "Created on"
+msgstr "creado"
+
+msgid "Creator"
+msgstr "creador"
+
+msgid "Date"
+msgstr "fecha"
+
+msgid "Decision"
+msgstr "decision"
+
+msgid "Department"
+msgstr "departamento"
+
+msgid "Description"
+msgstr "descripcion"
+
+msgid "Details"
+msgstr "detalles"
+
+msgid "Discarded"
+msgstr "descartada"
+
+msgid "Due date"
+msgstr "fecha limite"
+
+msgid "Factory"
+msgstr "Compañía"
+
+msgid "Idea"
+msgstr "idea"
+
+msgid "Idea workflow"
+msgstr "flujo de trabajo de la idea"
+
+msgid "Implemented"
+msgstr "implementada"
+
+msgid "In work"
+msgstr "en proceso"
+
+msgid "Information"
+msgstr "informacion"
+
+msgid "Last editing person"
+msgstr "ultima persona en editar"
+
+msgid "Later"
+msgstr "mas tarde"
+
+msgid "Measure"
+msgstr "medida"
+
+msgid "Measure to"
+msgstr "medida para"
+
+msgid "Measures"
+msgstr "medidas"
+
+msgid "New"
+msgstr "nueva"
+
+msgid "Next step"
+msgstr "proximo paso"
+
+msgid "Open measures"
+msgstr "medidas abiertas"
+
+msgid "Priority"
+msgstr "prioridad"
+
+msgid "Responsible"
+msgstr "responsable"
+
+msgid "Short description"
+msgstr "breve descripcion"
+
+msgid "Show"
+msgstr "mostrar"
+
+msgid "Signal"
+msgstr "señal"
+
+msgid "State"
+msgstr "estado"
+
+msgid "Status"
+msgstr "estado"
+
+msgid "Task"
+msgstr "tarea"
+
+msgid "Title"
+msgstr "titulo"
+
+msgid "Title EN"
+msgstr "titulo EN"
+
+msgid "Title in english"
+msgstr "titulo ingles"
+
+msgid "Title in local language"
+msgstr "titulo en idioma local"
+
+msgid "To be approved"
+msgstr "para ser aprovaba"
+
+msgid "Type"
+msgstr "tipo"
+
+msgid "all"
+msgstr "todas"
+
+msgid "closed"
+msgstr "cerrada"
+
+msgid "in 1 year"
+msgstr "en 1 año"
+
+msgid "in 6 months"
+msgstr "en 6 meses"
+
+msgid "now"
+msgstr "ahora"
+
+msgid "open"
+msgstr "abierta"
+
+msgid "since"
+msgstr "desde"
+
+msgid "Not mandatory, you can ask your supervisor."
+msgstr "no obligatorio, puedes preguntar a tu mando."
+
