@@ -28,7 +28,7 @@
 %IF{"'%URLPARAM{first}%'='first'" then="-->" else=""}%
 </td></tr>
 <tr><td width="200px">%MAKETEXT{"Created on"}%:</td><td>%WORKFLOWMETA{"LASTTIME_DRAFT"}%</td></tr>
-<tr><td>%MAKETEXT{"Creator"}%:</td><td>%RENDERFORDISPLAY{field="Creator" format="$value"}%</td></tr>
+<tr><td>%MAKETEXT{"Creator"}%:</td><td>%RENDERFOREDIT{field="Creator" format="$edit"}%</td></tr>
 <tr><td>%MAKETEXT{"Factory"}%:</td><td>%RENDERFOREDIT{field="Factory" format="$edit"}%</td></tr>
 <tr><td>%MAKETEXT{"Responsible"}%:</td><td>%RENDERFOREDIT{field="Responsible" format="$edit"}%</td></tr>
 </table>
