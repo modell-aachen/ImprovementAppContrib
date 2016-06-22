@@ -1,5 +1,6 @@
 %META:TOPICINFO{author="BaseUserMapping_333" comment="save topic" date="1452865539" format="1.1" reprev="3" version="9"}%
    * <a href='%SCRIPTURL{edit}%/%WEB%/IdeaAUTOINC0000?formtemplate=IdeaForm;templatetopic=%WEB%.IdeaTemplate;template=IdeaEdit;t=%GMTIME{$epoch}%;first=first'>%MAKETEXT{"Create new idea"}%</a>
+   * %IF{"'%TOPICTITLE%'='AllMeasures'" else="[[AllMeasures][$percntMAKETEXT{\"All measures\"}$percent]]" then="[[WebHome][$percntMAKETEXT{\"All Ideas\"}$percent]]"}%
 
 %META:WORKFLOWHISTORY{value="<br />DRAFT -- 10.04.2014"}%
 %META:WORKFLOW{name="DRAFT" LASTPROCESSOR_DRAFT="Main.AdminUser" LASTTIME_DRAFT="10.04.2014" LASTVERSION_DRAFT="1" LEAVING_NEW="Main.AdminUser" Remark="" Revision="0" TASK="" TASK_DUE=""}%

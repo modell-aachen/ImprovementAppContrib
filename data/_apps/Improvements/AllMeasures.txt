@@ -1,0 +1,32 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="" date="1452864400" format="1.1" version="21"}%
+<div class="JQTabPrintSelected">
+%TABPANE{class="simple"}%
+%TAB{"%MAKETEXT{"Open measures"}%" id="tab1"}%
+<a href="%SCRIPTURL{"view"}%/%SYSTEMWEB%/MAPrinceModPrintDialog?skin=text&section=dialog&pweb=%ENCODE{"%INCLUDINGWEB%" type="url"}%&ptopic=%ENCODE{"%INCLUDINGTOPIC%" type="url"}%&landscape=%LANDSCAPE{default="0"}%&showtab=tab1&printParams=showtab" class="jqUIDialogLink">%ICON{"pdf"}%</a>
+<div id="SignalOpenMeasures">
+%ACTIONSEARCH{web="%WEB%" topic="*" state="open" sort="$createdate,$who,$due" jqsortable="1" jqsortopts="widgets: ['zebra'], sortList: [[0,1],[0,1]], headers: { 0: { sorter: 'qwikiDate' }, 6: { sorter: 'qwikiDate' }, 7: { sorter: 'qwikiDate' }, 8: { sorter: false }, 9: { sorter: false }, 10: { sorter: false } }"}%
+</div>
+%ENDTAB%
+%TAB{"%MAKETEXT{"Closed measures"}%" id="tab2"}%
+<a href="%SCRIPTURL{"view"}%/%SYSTEMWEB%/MAPrinceModPrintDialog?skin=text&section=dialog&pweb=%ENCODE{"%INCLUDINGWEB%" type="url"}%&ptopic=%ENCODE{"%INCLUDINGTOPIC%" type="url"}%&landscape=%LANDSCAPE{default="0"}%&showtab=tab2&printParams=showtab" class="jqUIDialogLink">%ICON{"pdf"}%</a>
+<div id="SignalClosedMeasures">
+%ACTIONSEARCH{web="%WEB%" topic="*" state="closed" sort="$createdate,$who,$due" jqsortable="1" jqsortopts="widgets: ['zebra'], sortList: [[0,1],[0,1]], headers: { 0: { sorter: 'qwikiDate' }, 6: { sorter: 'qwikiDate' }, 7: { sorter: 'qwikiDate' }, 8: { sorter: false }, 9: { sorter: false }, 10: { sorter: false } }"}%
+</div>
+%ENDTAB%
+</div>
+%AMPEL{"SignalOpenMeasures" WARN="%SIGNAL_PREWARNTIME{default="7"}%" DATE="$percntMAKETEXT{\"Due date\"}$percnt" DST="$percntMAKETEXT{\"Signal\"}$percnt" DONE="State" COND="\d" LIVEQUERY="1"}%
+%AMPEL{"SignalClosedMeasures" WARN="%SIGNAL_PREWARNTIME{default="7"}%" DATE="$percntMAKETEXT{\"Due date\"}$percnt" DST="$percntMAKETEXT{\"Signal\"}$percnt" DONE="State" COND="\d" LIVEQUERY="1"}%
+</div>
+
+
+
+%META:FIELD{name="TopicTitle" attributes="" title="TopicTitle" value="All Measures"}%
+%META:WORKFLOWHISTORY{value="<br />DRAFT -- 15.01.2016"}%
+%META:WORKFLOW{name="DRAFT" LASTPROCESSOR_DRAFT="Main.AdminUser" LASTTIME_DRAFT="15.01.2016" LASTVERSION_DRAFT="1" LEAVING_NEW="Main.AdminUser" Remark="" Revision="0" TASK="" TASK_DUE=""}%
+%META:WRKFLWCONTRIBUTORS{name="DRAFT" value="Main.AdminUser"}%
+%META:PREFERENCE{name="DISPLAYCOMMENTS" title="DISPLAYCOMMENTS" type="Set" value="off"}%
+%META:PREFERENCE{name="ALLOWTOPICCOMMENT" title="ALLOWTOPICCOMMENT" type="Set" value="nobody"}%
+%META:PREFERENCE{name="WORKFLOW" title="WORKFLOW" type="Set" value=""}%
+%META:PREFERENCE{name="ACTIONTRACKERPLUGIN_TABLEHEADER" title="ACTIONTRACKERPLUGIN_TABLEHEADER" type="Set" value="| %25MAKETEXT%7b%22Date%22%7d%25 | %25MAKETEXT%7b%22Topic%22%7d%25 | %25MAKETEXT%7b%22Creator%22%7d%25 | %25MAKETEXT%7b%22Type%22%7d%25 | %25MAKETEXT%7b%22Measure to%22%7d%25 | %25MAKETEXT%7b%22Measure%22%7d%25/%25MAKETEXT%7b%22Information%22%7d%25 | Details | %25MAKETEXT%7b%22Due date%22%7d%25 | %25MAKETEXT%7b%22Closed on%22%7d%25 | <div style=%22display:none;%22>Status</div>| %25MAKETEXT%7b%22Signal%22%7d%25 ||"}%
+%META:PREFERENCE{name="ACTIONTRACKERPLUGIN_TABLEFORMAT" title="ACTIONTRACKERPLUGIN_TABLEFORMAT" type="Set" value="| $created | [[$topic]] | $creator | $percntMAKETEXT%7b%22$result%22%7d$percnt | $percntSUBST%7btext=%22$who%22 pattern=%22^Main\.%22 format=%22%22%7d$percnt | $task | $text | $due<div style=%22display: none%22>($closed)</div> | $closed | <div style=%22display:none;%22>$state</div> | |$edit |"}%
+

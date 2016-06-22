@@ -73,7 +73,7 @@ rows="99999"
 %SOLRSEARCH{
 "form:*IdeaForm process_state_s:* field_BestIdea_lst:BestIdea field_Department_s:%URLPARAM{"department" default="*"}%"
 web="%WEB%"
-fields="web, topic, field_TopicTitle_s, field_BestIdea_s, field_TitleEN_s, field_Summary_s, field_Creator_s, field_Responsible_lst, field_Department_s, createdate"
+fields="web, topic, field_TopicTitle_s, field_BestIdea_lst, field_TitleEN_s, field_Summary_s, field_Creator_s, field_Responsible_lst, field_Department_s, createdate"
 header=""
 format="| <a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$topic\">$field_TopicTitle_s</a>$percntIF{\"'$field_TitleEN_s'=''\" else=\"<div>$field_TitleEN_s</div>\"}$percnt | $field_Creator_s | $field_Department_s | $createdate | $n"
 footer=""
