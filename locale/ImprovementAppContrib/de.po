@@ -239,3 +239,36 @@ msgstr "Typ"
 
 msgid "yes"
 msgstr "ja"
+
+msgid "All"
+msgstr "Alles"
+
+msgid "Best idea"
+msgstr "Beste Idee"
+
+msgid "In work"
+msgstr "In Arbeit"
+
+msgid "Later"
+msgstr "Später"
+
+msgid "Show"
+msgstr "Zeigen"
+
+msgid "Factory"
+msgstr "Werk"
+
+msgid  "Not mandatory, you can ask your supervisor."
+msgstr "Optional, Sie können gerne Ihren Vorgesetzten fragen."
+
+msgid "now"
+msgstr "Jetzt"
+
+msgid "in 6 months"
+msgstr "in 6 Monaten"
+
+msgid "in 1 year"
+msgstr "in einem Jahr"
+
+msgid "Create date"
+msgstr "Erstellungs Datum"

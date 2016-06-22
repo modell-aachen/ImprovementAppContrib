@@ -1,5 +1,4 @@
 %META:TOPICINFO{author="BaseUserMapping_333" comment="pending" date="1452868270" format="1.1" version="6"}%
-%META:TOPICINFO{author="supplieth" comment="reprev" date="1448629775" format="1.1" reprev="5" version="1"}%
 | *Name* | *Type* | *Size* | *Values* | *Tooltip message* | *Attributes* |
 | TopicTitle | text | 48 | | %MAKETEXT{"Title in local language"}% | M |
 | Creator | text | 50 | %WIKINAME% | %MAKETEXT{"Creator"}% | |
