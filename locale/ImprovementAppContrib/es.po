@@ -14,7 +14,7 @@ msgid "All measures"
 msgstr "todas las medidas"
 
 msgid "Approved"
-msgstr "Aprovado"
+msgstr "Aprobado"
 
 msgid "Best idea"
 msgstr "Mejor idea"
@@ -143,7 +143,7 @@ msgid "Title in local language"
 msgstr "titulo en idioma local"
 
 msgid "To be approved"
-msgstr "para ser aprovaba"
+msgstr "para ser aprobada"
 
 msgid "Type"
 msgstr "tipo"
